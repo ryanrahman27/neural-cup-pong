@@ -28,16 +28,16 @@ from .losses import DynamicsLoss
 class TrainConfig:
     data_dir: str = "data/cup_v1"
     ckpt: str = "checkpoints/phase3_gru"
-    window: int = 32
+    window: int = 40           # must be >= ss_burn + ss_horizon
     hidden: int = 192
     batch: int = 256
     lr: float = 1e-3
     tf_epochs: int = 8
     ss_epochs: int = 6
     ss_burn: int = 4
-    ss_horizon: int = 20
+    ss_horizon: int = 24
     ss_tf_start: float = 1.0
-    ss_tf_end: float = 0.4
+    ss_tf_end: float = 0.4     # gentle free-run; harder schedules destabilized
     steps_per_epoch: int = 200
     seed: int = 0
 
@@ -97,7 +97,8 @@ def main(cfg: TrainConfig):
 
     def scheduled_epoch(tf_prob):
         model.train(); tot = 0.0
-        W, burn, H = cfg.window, cfg.ss_burn, cfg.ss_horizon
+        W, burn = cfg.window, cfg.ss_burn
+        H = min(cfg.ss_horizon, W - burn)          # must fit inside the window
         for _ in range(cfg.steps_per_epoch):
             S, A, E = _sample_batch(eps, W, cfg.batch, rng)
             _, h = model(S[:, :burn], A[:, :burn])         # warm hidden state (GT)
@@ -119,13 +120,40 @@ def main(cfg: TrainConfig):
             opt.step(); tot += float(loss)
         return tot / cfg.steps_per_epoch
 
+    # fixed validation batch for a cheap free-run rollout proxy (keep-best)
+    val_S, val_A, _ = _sample_batch(eps, cfg.window, min(128, cfg.batch), np.random.default_rng(cfg.seed + 777))
+    best = {"proxy": float("inf"), "state": None}
+
+    def rollout_proxy():
+        model.eval()
+        with torch.no_grad():
+            preds = model.rollout(val_S[:, :cfg.ss_burn], val_A[:, :cfg.ss_burn], val_A[:, cfg.ss_burn:cfg.window])
+            gt = val_S[:, cfg.ss_burn + 1:cfg.window + 1]
+            n = min(preds.shape[1], gt.shape[1])
+            err = (preds[:, :n, L.POS] - gt[:, :n, L.POS]).pow(2).sum(-1).sqrt().mean()
+        model.train()
+        return float(err)
+
+    def track_best():
+        p = rollout_proxy()
+        if p < best["proxy"]:
+            best["proxy"] = p
+            best["state"] = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+        return p
+
     t0 = time.time()
     for e in range(cfg.tf_epochs):
-        print(f"[TF {e+1}/{cfg.tf_epochs}] loss={teacher_forced_epoch():.4f}  ({time.time()-t0:.0f}s)")
+        loss = teacher_forced_epoch()
+        print(f"[TF {e+1}/{cfg.tf_epochs}] loss={loss:.4f}  proxy={track_best():.3f}  ({time.time()-t0:.0f}s)")
     for e in range(cfg.ss_epochs):
         frac = e / max(1, cfg.ss_epochs - 1)
         tf_prob = cfg.ss_tf_start + (cfg.ss_tf_end - cfg.ss_tf_start) * frac
-        print(f"[SS {e+1}/{cfg.ss_epochs} tf={tf_prob:.2f}] loss={scheduled_epoch(tf_prob):.4f}  ({time.time()-t0:.0f}s)")
+        loss = scheduled_epoch(tf_prob)
+        print(f"[SS {e+1}/{cfg.ss_epochs} tf={tf_prob:.2f}] loss={loss:.4f}  proxy={track_best():.3f}  ({time.time()-t0:.0f}s)")
+
+    if best["state"] is not None:
+        model.load_state_dict(best["state"])
+        print(f"restored best checkpoint (rollout proxy={best['proxy']:.3f})")
 
     os.makedirs(os.path.dirname(os.path.abspath(cfg.ckpt)), exist_ok=True)
     torch.save({"model": model.state_dict(), "hidden": cfg.hidden}, cfg.ckpt + ".pt")

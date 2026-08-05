@@ -1,0 +1,7453 @@
+{
+  "num_episodes": 450,
+  "total_frames": 489837,
+  "base_seed": 20000,
+  "max_steps": 2000,
+  "policy_counts": {
+    "explore": 145,
+    "corner": 50,
+    "competent": 121,
+    "random": 47,
+    "mash": 27,
+    "sharp": 60
+  },
+  "event_totals": {
+    "throw_released": 10959,
+    "miss": 10062,
+    "table_bounce": 5902,
+    "rim_bounce": 3246,
+    "game_over": 449,
+    "cup_sunk": 897,
+    "rack_cleared": 121
+  },
+  "seconds": 324.65,
+  "frames_per_second": 1508.8,
+  "episodes": [
+    {
+      "episode_id": 0,
+      "seed": 20000,
+      "policy": "explore",
+      "length": 1329,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 1,
+      "seed": 20001,
+      "policy": "corner",
+      "length": 1401,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 17,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 2,
+      "seed": 20002,
+      "policy": "competent",
+      "length": 302,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 3,
+      "seed": 20003,
+      "policy": "explore",
+      "length": 1193,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 8,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 4,
+      "seed": 20004,
+      "policy": "explore",
+      "length": 1291,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 5,
+      "seed": 20005,
+      "policy": "competent",
+      "length": 617,
+      "score": 6,
+      "throws": 15,
+      "terminated": true,
+      "events": {
+        "throw_released": 15,
+        "cup_sunk": 6,
+        "miss": 9,
+        "table_bounce": 3,
+        "rim_bounce": 9,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 6,
+      "seed": 20006,
+      "policy": "competent",
+      "length": 211,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 7,
+      "seed": 20007,
+      "policy": "competent",
+      "length": 260,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "table_bounce": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 8,
+      "seed": 20008,
+      "policy": "explore",
+      "length": 1284,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 9,
+      "seed": 20009,
+      "policy": "random",
+      "length": 1628,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 17,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 10,
+      "seed": 20010,
+      "policy": "competent",
+      "length": 298,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 1,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 11,
+      "seed": 20011,
+      "policy": "explore",
+      "length": 1331,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 12,
+      "seed": 20012,
+      "policy": "mash",
+      "length": 1258,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 4,
+        "rim_bounce": 13,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 13,
+      "seed": 20013,
+      "policy": "explore",
+      "length": 1324,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 14,
+      "seed": 20014,
+      "policy": "random",
+      "length": 1868,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 16,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 15,
+      "seed": 20015,
+      "policy": "competent",
+      "length": 684,
+      "score": 6,
+      "throws": 16,
+      "terminated": true,
+      "events": {
+        "throw_released": 16,
+        "cup_sunk": 6,
+        "miss": 10,
+        "table_bounce": 9,
+        "rim_bounce": 10,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 16,
+      "seed": 20016,
+      "policy": "random",
+      "length": 1612,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 4,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 17,
+      "seed": 20017,
+      "policy": "competent",
+      "length": 217,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 18,
+      "seed": 20018,
+      "policy": "corner",
+      "length": 1470,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 19,
+      "seed": 20019,
+      "policy": "competent",
+      "length": 373,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "table_bounce": 1,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 20,
+      "seed": 20020,
+      "policy": "corner",
+      "length": 1388,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 21,
+      "seed": 20021,
+      "policy": "competent",
+      "length": 329,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 22,
+      "seed": 20022,
+      "policy": "competent",
+      "length": 357,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "table_bounce": 1,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 23,
+      "seed": 20023,
+      "policy": "mash",
+      "length": 1203,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 19,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 24,
+      "seed": 20024,
+      "policy": "explore",
+      "length": 1291,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 25,
+      "seed": 20025,
+      "policy": "competent",
+      "length": 445,
+      "score": 6,
+      "throws": 11,
+      "terminated": true,
+      "events": {
+        "throw_released": 11,
+        "cup_sunk": 6,
+        "miss": 5,
+        "table_bounce": 1,
+        "rim_bounce": 5,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 26,
+      "seed": 20026,
+      "policy": "competent",
+      "length": 310,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 27,
+      "seed": 20027,
+      "policy": "competent",
+      "length": 211,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 28,
+      "seed": 20028,
+      "policy": "explore",
+      "length": 1302,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 17,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 29,
+      "seed": 20029,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 30,
+      "seed": 20030,
+      "policy": "explore",
+      "length": 1282,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 15,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 31,
+      "seed": 20031,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 32,
+      "seed": 20032,
+      "policy": "competent",
+      "length": 259,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "table_bounce": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 33,
+      "seed": 20033,
+      "policy": "corner",
+      "length": 1378,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 34,
+      "seed": 20034,
+      "policy": "explore",
+      "length": 1344,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 35,
+      "seed": 20035,
+      "policy": "explore",
+      "length": 1323,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 17,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 36,
+      "seed": 20036,
+      "policy": "explore",
+      "length": 1267,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 37,
+      "seed": 20037,
+      "policy": "random",
+      "length": 1692,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 6,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 38,
+      "seed": 20038,
+      "policy": "competent",
+      "length": 302,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 39,
+      "seed": 20039,
+      "policy": "competent",
+      "length": 304,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 40,
+      "seed": 20040,
+      "policy": "random",
+      "length": 1603,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 9,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 41,
+      "seed": 20041,
+      "policy": "competent",
+      "length": 258,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 42,
+      "seed": 20042,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 43,
+      "seed": 20043,
+      "policy": "competent",
+      "length": 346,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "table_bounce": 1,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 44,
+      "seed": 20044,
+      "policy": "corner",
+      "length": 1418,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 20,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 45,
+      "seed": 20045,
+      "policy": "explore",
+      "length": 1272,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 14,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 46,
+      "seed": 20046,
+      "policy": "explore",
+      "length": 1264,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 11,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 47,
+      "seed": 20047,
+      "policy": "explore",
+      "length": 1320,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 48,
+      "seed": 20048,
+      "policy": "explore",
+      "length": 1306,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 13,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 49,
+      "seed": 20049,
+      "policy": "corner",
+      "length": 1292,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 50,
+      "seed": 20050,
+      "policy": "explore",
+      "length": 1286,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 17,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 51,
+      "seed": 20051,
+      "policy": "random",
+      "length": 1689,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 20,
+        "rim_bounce": 10,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 52,
+      "seed": 20052,
+      "policy": "explore",
+      "length": 1294,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 9,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 53,
+      "seed": 20053,
+      "policy": "competent",
+      "length": 250,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 54,
+      "seed": 20054,
+      "policy": "explore",
+      "length": 1338,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 15,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 55,
+      "seed": 20055,
+      "policy": "mash",
+      "length": 1279,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 10,
+        "rim_bounce": 21,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 56,
+      "seed": 20056,
+      "policy": "competent",
+      "length": 216,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 57,
+      "seed": 20057,
+      "policy": "explore",
+      "length": 1263,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 14,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 58,
+      "seed": 20058,
+      "policy": "corner",
+      "length": 1367,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 59,
+      "seed": 20059,
+      "policy": "random",
+      "length": 1633,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 28,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 60,
+      "seed": 20060,
+      "policy": "random",
+      "length": 1357,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 1,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 61,
+      "seed": 20061,
+      "policy": "competent",
+      "length": 645,
+      "score": 6,
+      "throws": 15,
+      "terminated": true,
+      "events": {
+        "throw_released": 15,
+        "cup_sunk": 6,
+        "miss": 9,
+        "table_bounce": 9,
+        "rim_bounce": 9,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 62,
+      "seed": 20062,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 63,
+      "seed": 20063,
+      "policy": "corner",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 19,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 64,
+      "seed": 20064,
+      "policy": "competent",
+      "length": 350,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 65,
+      "seed": 20065,
+      "policy": "competent",
+      "length": 269,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 66,
+      "seed": 20066,
+      "policy": "corner",
+      "length": 1332,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 67,
+      "seed": 20067,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 68,
+      "seed": 20068,
+      "policy": "corner",
+      "length": 1305,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 19,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 69,
+      "seed": 20069,
+      "policy": "competent",
+      "length": 634,
+      "score": 6,
+      "throws": 15,
+      "terminated": true,
+      "events": {
+        "throw_released": 15,
+        "cup_sunk": 6,
+        "miss": 9,
+        "table_bounce": 2,
+        "rim_bounce": 9,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 70,
+      "seed": 20070,
+      "policy": "corner",
+      "length": 1425,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 19,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 71,
+      "seed": 20071,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 72,
+      "seed": 20072,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 73,
+      "seed": 20073,
+      "policy": "explore",
+      "length": 1364,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 9,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 74,
+      "seed": 20074,
+      "policy": "competent",
+      "length": 266,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 75,
+      "seed": 20075,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 76,
+      "seed": 20076,
+      "policy": "mash",
+      "length": 1159,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 3,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 77,
+      "seed": 20077,
+      "policy": "mash",
+      "length": 1153,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 26,
+        "rim_bounce": 11,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 78,
+      "seed": 20078,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 79,
+      "seed": 20079,
+      "policy": "explore",
+      "length": 1313,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 80,
+      "seed": 20080,
+      "policy": "explore",
+      "length": 1250,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 11,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 81,
+      "seed": 20081,
+      "policy": "competent",
+      "length": 453,
+      "score": 6,
+      "throws": 11,
+      "terminated": true,
+      "events": {
+        "throw_released": 11,
+        "cup_sunk": 6,
+        "miss": 5,
+        "table_bounce": 1,
+        "rim_bounce": 5,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 82,
+      "seed": 20082,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 83,
+      "seed": 20083,
+      "policy": "random",
+      "length": 1810,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 84,
+      "seed": 20084,
+      "policy": "explore",
+      "length": 1315,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 85,
+      "seed": 20085,
+      "policy": "corner",
+      "length": 1395,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 86,
+      "seed": 20086,
+      "policy": "explore",
+      "length": 1249,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 13,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 87,
+      "seed": 20087,
+      "policy": "random",
+      "length": 1646,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 10,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 88,
+      "seed": 20088,
+      "policy": "explore",
+      "length": 1341,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 89,
+      "seed": 20089,
+      "policy": "competent",
+      "length": 270,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 90,
+      "seed": 20090,
+      "policy": "explore",
+      "length": 1246,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 91,
+      "seed": 20091,
+      "policy": "random",
+      "length": 1506,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 27,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 92,
+      "seed": 20092,
+      "policy": "mash",
+      "length": 1133,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 93,
+      "seed": 20093,
+      "policy": "explore",
+      "length": 1269,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 94,
+      "seed": 20094,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 95,
+      "seed": 20095,
+      "policy": "explore",
+      "length": 1299,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 19,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 96,
+      "seed": 20096,
+      "policy": "competent",
+      "length": 356,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 97,
+      "seed": 20097,
+      "policy": "explore",
+      "length": 1288,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 17,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 98,
+      "seed": 20098,
+      "policy": "corner",
+      "length": 1327,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 17,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 99,
+      "seed": 20099,
+      "policy": "mash",
+      "length": 1218,
+      "score": 3,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 3,
+        "miss": 27,
+        "table_bounce": 17,
+        "rim_bounce": 14,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 100,
+      "seed": 20100,
+      "policy": "explore",
+      "length": 1370,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 12,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 101,
+      "seed": 20101,
+      "policy": "corner",
+      "length": 1475,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 20,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 102,
+      "seed": 20102,
+      "policy": "competent",
+      "length": 339,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 103,
+      "seed": 20103,
+      "policy": "competent",
+      "length": 413,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "table_bounce": 1,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 104,
+      "seed": 20104,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 105,
+      "seed": 20105,
+      "policy": "explore",
+      "length": 1252,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 106,
+      "seed": 20106,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 107,
+      "seed": 20107,
+      "policy": "random",
+      "length": 1614,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 26,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 108,
+      "seed": 20108,
+      "policy": "competent",
+      "length": 297,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 109,
+      "seed": 20109,
+      "policy": "competent",
+      "length": 430,
+      "score": 6,
+      "throws": 11,
+      "terminated": true,
+      "events": {
+        "throw_released": 11,
+        "cup_sunk": 6,
+        "miss": 5,
+        "rim_bounce": 5,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 110,
+      "seed": 20110,
+      "policy": "corner",
+      "length": 1501,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 19,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 111,
+      "seed": 20111,
+      "policy": "competent",
+      "length": 304,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 112,
+      "seed": 20112,
+      "policy": "explore",
+      "length": 1326,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 12,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 113,
+      "seed": 20113,
+      "policy": "explore",
+      "length": 1292,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 114,
+      "seed": 20114,
+      "policy": "competent",
+      "length": 315,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 1,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 115,
+      "seed": 20115,
+      "policy": "random",
+      "length": 1880,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 24,
+        "rim_bounce": 9,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 116,
+      "seed": 20116,
+      "policy": "explore",
+      "length": 1288,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 117,
+      "seed": 20117,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 118,
+      "seed": 20118,
+      "policy": "explore",
+      "length": 1301,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 119,
+      "seed": 20119,
+      "policy": "explore",
+      "length": 1278,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 14,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 120,
+      "seed": 20120,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 121,
+      "seed": 20121,
+      "policy": "corner",
+      "length": 1324,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 21,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 122,
+      "seed": 20122,
+      "policy": "random",
+      "length": 1565,
+      "score": 3,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 3,
+        "miss": 27,
+        "table_bounce": 14,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 123,
+      "seed": 20123,
+      "policy": "explore",
+      "length": 1299,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 8,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 124,
+      "seed": 20124,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 125,
+      "seed": 20125,
+      "policy": "random",
+      "length": 1448,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "rim_bounce": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 126,
+      "seed": 20126,
+      "policy": "corner",
+      "length": 1410,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 12,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 127,
+      "seed": 20127,
+      "policy": "explore",
+      "length": 1251,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 17,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 128,
+      "seed": 20128,
+      "policy": "random",
+      "length": 1571,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 17,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 129,
+      "seed": 20129,
+      "policy": "random",
+      "length": 1437,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 27,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 130,
+      "seed": 20130,
+      "policy": "competent",
+      "length": 382,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 131,
+      "seed": 20131,
+      "policy": "competent",
+      "length": 211,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 132,
+      "seed": 20132,
+      "policy": "competent",
+      "length": 346,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "table_bounce": 1,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 133,
+      "seed": 20133,
+      "policy": "explore",
+      "length": 1330,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 134,
+      "seed": 20134,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 135,
+      "seed": 20135,
+      "policy": "corner",
+      "length": 1428,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 19,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 136,
+      "seed": 20136,
+      "policy": "corner",
+      "length": 1399,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 137,
+      "seed": 20137,
+      "policy": "mash",
+      "length": 1184,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 11,
+        "rim_bounce": 9,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 138,
+      "seed": 20138,
+      "policy": "explore",
+      "length": 1296,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 17,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 139,
+      "seed": 20139,
+      "policy": "corner",
+      "length": 1291,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 140,
+      "seed": 20140,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 141,
+      "seed": 20141,
+      "policy": "mash",
+      "length": 1055,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 27,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 142,
+      "seed": 20142,
+      "policy": "corner",
+      "length": 1433,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 143,
+      "seed": 20143,
+      "policy": "competent",
+      "length": 496,
+      "score": 6,
+      "throws": 12,
+      "terminated": true,
+      "events": {
+        "throw_released": 12,
+        "cup_sunk": 6,
+        "miss": 6,
+        "table_bounce": 5,
+        "rim_bounce": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 144,
+      "seed": 20144,
+      "policy": "explore",
+      "length": 1254,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 17,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 145,
+      "seed": 20145,
+      "policy": "explore",
+      "length": 1305,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 146,
+      "seed": 20146,
+      "policy": "mash",
+      "length": 1158,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 19,
+        "rim_bounce": 9,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 147,
+      "seed": 20147,
+      "policy": "explore",
+      "length": 1330,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 13,
+        "rim_bounce": 9,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 148,
+      "seed": 20148,
+      "policy": "corner",
+      "length": 1491,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 149,
+      "seed": 20149,
+      "policy": "competent",
+      "length": 312,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 150,
+      "seed": 20150,
+      "policy": "explore",
+      "length": 1300,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 151,
+      "seed": 20151,
+      "policy": "explore",
+      "length": 1295,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 13,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 152,
+      "seed": 20152,
+      "policy": "random",
+      "length": 1414,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 19,
+        "rim_bounce": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 153,
+      "seed": 20153,
+      "policy": "explore",
+      "length": 1361,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 154,
+      "seed": 20154,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 155,
+      "seed": 20155,
+      "policy": "competent",
+      "length": 617,
+      "score": 6,
+      "throws": 15,
+      "terminated": true,
+      "events": {
+        "throw_released": 15,
+        "cup_sunk": 6,
+        "miss": 9,
+        "table_bounce": 3,
+        "rim_bounce": 9,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 156,
+      "seed": 20156,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 157,
+      "seed": 20157,
+      "policy": "competent",
+      "length": 253,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 158,
+      "seed": 20158,
+      "policy": "explore",
+      "length": 1308,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 16,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 159,
+      "seed": 20159,
+      "policy": "explore",
+      "length": 1296,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 14,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 160,
+      "seed": 20160,
+      "policy": "corner",
+      "length": 1294,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 161,
+      "seed": 20161,
+      "policy": "mash",
+      "length": 1127,
+      "score": 3,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 3,
+        "miss": 27,
+        "table_bounce": 10,
+        "rim_bounce": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 162,
+      "seed": 20162,
+      "policy": "explore",
+      "length": 1332,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 13,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 163,
+      "seed": 20163,
+      "policy": "competent",
+      "length": 399,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "table_bounce": 3,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 164,
+      "seed": 20164,
+      "policy": "explore",
+      "length": 1297,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 16,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 165,
+      "seed": 20165,
+      "policy": "competent",
+      "length": 306,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 166,
+      "seed": 20166,
+      "policy": "competent",
+      "length": 261,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "table_bounce": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 167,
+      "seed": 20167,
+      "policy": "corner",
+      "length": 1471,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 21,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 168,
+      "seed": 20168,
+      "policy": "competent",
+      "length": 301,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 169,
+      "seed": 20169,
+      "policy": "explore",
+      "length": 1325,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 10,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 170,
+      "seed": 20170,
+      "policy": "competent",
+      "length": 221,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 171,
+      "seed": 20171,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 172,
+      "seed": 20172,
+      "policy": "random",
+      "length": 1573,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 18,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 173,
+      "seed": 20173,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 174,
+      "seed": 20174,
+      "policy": "competent",
+      "length": 251,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 175,
+      "seed": 20175,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 176,
+      "seed": 20176,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 177,
+      "seed": 20177,
+      "policy": "competent",
+      "length": 226,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 178,
+      "seed": 20178,
+      "policy": "competent",
+      "length": 259,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "table_bounce": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 179,
+      "seed": 20179,
+      "policy": "explore",
+      "length": 1243,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 9,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 180,
+      "seed": 20180,
+      "policy": "corner",
+      "length": 1497,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 181,
+      "seed": 20181,
+      "policy": "competent",
+      "length": 221,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 182,
+      "seed": 20182,
+      "policy": "explore",
+      "length": 1307,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 183,
+      "seed": 20183,
+      "policy": "explore",
+      "length": 1308,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 14,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 184,
+      "seed": 20184,
+      "policy": "corner",
+      "length": 1300,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 17,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 185,
+      "seed": 20185,
+      "policy": "explore",
+      "length": 1302,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 16,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 186,
+      "seed": 20186,
+      "policy": "explore",
+      "length": 1317,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 9,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 187,
+      "seed": 20187,
+      "policy": "random",
+      "length": 1610,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 25,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 188,
+      "seed": 20188,
+      "policy": "competent",
+      "length": 406,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "table_bounce": 3,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 189,
+      "seed": 20189,
+      "policy": "explore",
+      "length": 1288,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 13,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 190,
+      "seed": 20190,
+      "policy": "explore",
+      "length": 1330,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 191,
+      "seed": 20191,
+      "policy": "explore",
+      "length": 1310,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 192,
+      "seed": 20192,
+      "policy": "explore",
+      "length": 1217,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 193,
+      "seed": 20193,
+      "policy": "competent",
+      "length": 256,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 194,
+      "seed": 20194,
+      "policy": "competent",
+      "length": 722,
+      "score": 6,
+      "throws": 17,
+      "terminated": true,
+      "events": {
+        "throw_released": 17,
+        "cup_sunk": 6,
+        "miss": 11,
+        "table_bounce": 8,
+        "rim_bounce": 11,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 195,
+      "seed": 20195,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 196,
+      "seed": 20196,
+      "policy": "explore",
+      "length": 1305,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 197,
+      "seed": 20197,
+      "policy": "random",
+      "length": 1667,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 10,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 198,
+      "seed": 20198,
+      "policy": "explore",
+      "length": 1323,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 199,
+      "seed": 20199,
+      "policy": "corner",
+      "length": 1365,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 20,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 200,
+      "seed": 20200,
+      "policy": "competent",
+      "length": 444,
+      "score": 6,
+      "throws": 11,
+      "terminated": true,
+      "events": {
+        "throw_released": 11,
+        "cup_sunk": 6,
+        "miss": 5,
+        "table_bounce": 3,
+        "rim_bounce": 5,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 201,
+      "seed": 20201,
+      "policy": "mash",
+      "length": 1021,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 29,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 202,
+      "seed": 20202,
+      "policy": "competent",
+      "length": 490,
+      "score": 6,
+      "throws": 12,
+      "terminated": true,
+      "events": {
+        "throw_released": 12,
+        "cup_sunk": 6,
+        "miss": 6,
+        "table_bounce": 5,
+        "rim_bounce": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 203,
+      "seed": 20203,
+      "policy": "competent",
+      "length": 255,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 204,
+      "seed": 20204,
+      "policy": "explore",
+      "length": 1296,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 205,
+      "seed": 20205,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 206,
+      "seed": 20206,
+      "policy": "mash",
+      "length": 1177,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 13,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 207,
+      "seed": 20207,
+      "policy": "competent",
+      "length": 268,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 208,
+      "seed": 20208,
+      "policy": "competent",
+      "length": 265,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 209,
+      "seed": 20209,
+      "policy": "competent",
+      "length": 213,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 210,
+      "seed": 20210,
+      "policy": "competent",
+      "length": 266,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 211,
+      "seed": 20211,
+      "policy": "random",
+      "length": 1755,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 15,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 212,
+      "seed": 20212,
+      "policy": "explore",
+      "length": 1317,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 18,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 213,
+      "seed": 20213,
+      "policy": "mash",
+      "length": 1161,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 24,
+        "rim_bounce": 13,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 214,
+      "seed": 20214,
+      "policy": "mash",
+      "length": 1131,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 3,
+        "rim_bounce": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 215,
+      "seed": 20215,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 216,
+      "seed": 20216,
+      "policy": "explore",
+      "length": 1273,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 16,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 217,
+      "seed": 20217,
+      "policy": "corner",
+      "length": 1407,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 24,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 218,
+      "seed": 20218,
+      "policy": "explore",
+      "length": 1284,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 14,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 219,
+      "seed": 20219,
+      "policy": "explore",
+      "length": 1294,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 11,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 220,
+      "seed": 20220,
+      "policy": "competent",
+      "length": 438,
+      "score": 6,
+      "throws": 11,
+      "terminated": true,
+      "events": {
+        "throw_released": 11,
+        "cup_sunk": 6,
+        "miss": 5,
+        "table_bounce": 2,
+        "rim_bounce": 5,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 221,
+      "seed": 20221,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 222,
+      "seed": 20222,
+      "policy": "explore",
+      "length": 1322,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 13,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 223,
+      "seed": 20223,
+      "policy": "mash",
+      "length": 1103,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 1,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 224,
+      "seed": 20224,
+      "policy": "competent",
+      "length": 270,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "table_bounce": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 225,
+      "seed": 20225,
+      "policy": "mash",
+      "length": 1120,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 7,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 226,
+      "seed": 20226,
+      "policy": "competent",
+      "length": 509,
+      "score": 6,
+      "throws": 13,
+      "terminated": true,
+      "events": {
+        "throw_released": 13,
+        "cup_sunk": 6,
+        "miss": 7,
+        "table_bounce": 4,
+        "rim_bounce": 7,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 227,
+      "seed": 20227,
+      "policy": "corner",
+      "length": 1360,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 228,
+      "seed": 20228,
+      "policy": "mash",
+      "length": 987,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 29,
+        "rim_bounce": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 229,
+      "seed": 20229,
+      "policy": "explore",
+      "length": 1304,
+      "score": 3,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 3,
+        "miss": 27,
+        "table_bounce": 14,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 230,
+      "seed": 20230,
+      "policy": "explore",
+      "length": 1274,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 17,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 231,
+      "seed": 20231,
+      "policy": "random",
+      "length": 1927,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 17,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 232,
+      "seed": 20232,
+      "policy": "corner",
+      "length": 1433,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 17,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 233,
+      "seed": 20233,
+      "policy": "explore",
+      "length": 1255,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 234,
+      "seed": 20234,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 235,
+      "seed": 20235,
+      "policy": "competent",
+      "length": 217,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 236,
+      "seed": 20236,
+      "policy": "explore",
+      "length": 1225,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 17,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 237,
+      "seed": 20237,
+      "policy": "random",
+      "length": 1641,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 18,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 238,
+      "seed": 20238,
+      "policy": "explore",
+      "length": 1284,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 14,
+        "rim_bounce": 9,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 239,
+      "seed": 20239,
+      "policy": "corner",
+      "length": 1437,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 20,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 240,
+      "seed": 20240,
+      "policy": "explore",
+      "length": 1324,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 16,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 241,
+      "seed": 20241,
+      "policy": "competent",
+      "length": 688,
+      "score": 6,
+      "throws": 16,
+      "terminated": true,
+      "events": {
+        "throw_released": 16,
+        "cup_sunk": 6,
+        "miss": 10,
+        "table_bounce": 8,
+        "rim_bounce": 10,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 242,
+      "seed": 20242,
+      "policy": "competent",
+      "length": 384,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "table_bounce": 1,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 243,
+      "seed": 20243,
+      "policy": "competent",
+      "length": 254,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 244,
+      "seed": 20244,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 245,
+      "seed": 20245,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 246,
+      "seed": 20246,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 247,
+      "seed": 20247,
+      "policy": "explore",
+      "length": 1266,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 248,
+      "seed": 20248,
+      "policy": "competent",
+      "length": 313,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 249,
+      "seed": 20249,
+      "policy": "explore",
+      "length": 1257,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 250,
+      "seed": 20250,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 251,
+      "seed": 20251,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 252,
+      "seed": 20252,
+      "policy": "corner",
+      "length": 1383,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 253,
+      "seed": 20253,
+      "policy": "explore",
+      "length": 1362,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 16,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 254,
+      "seed": 20254,
+      "policy": "random",
+      "length": 1645,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 11,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 255,
+      "seed": 20255,
+      "policy": "mash",
+      "length": 1251,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 23,
+        "rim_bounce": 12,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 256,
+      "seed": 20256,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 257,
+      "seed": 20257,
+      "policy": "competent",
+      "length": 309,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 258,
+      "seed": 20258,
+      "policy": "explore",
+      "length": 1315,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 259,
+      "seed": 20259,
+      "policy": "corner",
+      "length": 1393,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 21,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 260,
+      "seed": 20260,
+      "policy": "explore",
+      "length": 1240,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 261,
+      "seed": 20261,
+      "policy": "explore",
+      "length": 1246,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 17,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 262,
+      "seed": 20262,
+      "policy": "random",
+      "length": 1915,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 23,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 263,
+      "seed": 20263,
+      "policy": "explore",
+      "length": 1352,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 264,
+      "seed": 20264,
+      "policy": "competent",
+      "length": 442,
+      "score": 6,
+      "throws": 11,
+      "terminated": true,
+      "events": {
+        "throw_released": 11,
+        "cup_sunk": 6,
+        "miss": 5,
+        "table_bounce": 3,
+        "rim_bounce": 5,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 265,
+      "seed": 20265,
+      "policy": "random",
+      "length": 1813,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 266,
+      "seed": 20266,
+      "policy": "explore",
+      "length": 1316,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 11,
+        "rim_bounce": 9,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 267,
+      "seed": 20267,
+      "policy": "explore",
+      "length": 1268,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 268,
+      "seed": 20268,
+      "policy": "competent",
+      "length": 360,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "table_bounce": 2,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 269,
+      "seed": 20269,
+      "policy": "explore",
+      "length": 1290,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 15,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 270,
+      "seed": 20270,
+      "policy": "random",
+      "length": 1594,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 23,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 271,
+      "seed": 20271,
+      "policy": "random",
+      "length": 1707,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 272,
+      "seed": 20272,
+      "policy": "competent",
+      "length": 268,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 273,
+      "seed": 20273,
+      "policy": "mash",
+      "length": 1067,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 28,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 274,
+      "seed": 20274,
+      "policy": "corner",
+      "length": 1386,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 275,
+      "seed": 20275,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 276,
+      "seed": 20276,
+      "policy": "explore",
+      "length": 1347,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 277,
+      "seed": 20277,
+      "policy": "random",
+      "length": 1591,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 9,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 278,
+      "seed": 20278,
+      "policy": "explore",
+      "length": 1318,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 279,
+      "seed": 20279,
+      "policy": "competent",
+      "length": 347,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "table_bounce": 1,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 280,
+      "seed": 20280,
+      "policy": "competent",
+      "length": 384,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 281,
+      "seed": 20281,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 282,
+      "seed": 20282,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 283,
+      "seed": 20283,
+      "policy": "corner",
+      "length": 1313,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 20,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 284,
+      "seed": 20284,
+      "policy": "competent",
+      "length": 401,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "table_bounce": 1,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 285,
+      "seed": 20285,
+      "policy": "random",
+      "length": 1504,
+      "score": 4,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 4,
+        "miss": 26,
+        "table_bounce": 15,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 286,
+      "seed": 20286,
+      "policy": "competent",
+      "length": 802,
+      "score": 6,
+      "throws": 19,
+      "terminated": true,
+      "events": {
+        "throw_released": 19,
+        "cup_sunk": 6,
+        "miss": 13,
+        "table_bounce": 5,
+        "rim_bounce": 13,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 287,
+      "seed": 20287,
+      "policy": "explore",
+      "length": 1294,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 288,
+      "seed": 20288,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 289,
+      "seed": 20289,
+      "policy": "corner",
+      "length": 1359,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 19,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 290,
+      "seed": 20290,
+      "policy": "competent",
+      "length": 342,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 291,
+      "seed": 20291,
+      "policy": "corner",
+      "length": 1326,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 20,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 292,
+      "seed": 20292,
+      "policy": "explore",
+      "length": 1284,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 293,
+      "seed": 20293,
+      "policy": "competent",
+      "length": 322,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 294,
+      "seed": 20294,
+      "policy": "random",
+      "length": 1613,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 9,
+        "rim_bounce": 10,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 295,
+      "seed": 20295,
+      "policy": "corner",
+      "length": 1430,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 296,
+      "seed": 20296,
+      "policy": "explore",
+      "length": 1353,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 9,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 297,
+      "seed": 20297,
+      "policy": "corner",
+      "length": 1452,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 298,
+      "seed": 20298,
+      "policy": "mash",
+      "length": 1142,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 5,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 299,
+      "seed": 20299,
+      "policy": "explore",
+      "length": 1266,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 12,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 300,
+      "seed": 20300,
+      "policy": "explore",
+      "length": 1346,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 12,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 301,
+      "seed": 20301,
+      "policy": "random",
+      "length": 1691,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 25,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 302,
+      "seed": 20302,
+      "policy": "corner",
+      "length": 1293,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 303,
+      "seed": 20303,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 304,
+      "seed": 20304,
+      "policy": "random",
+      "length": 1535,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 11,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 305,
+      "seed": 20305,
+      "policy": "corner",
+      "length": 1445,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 306,
+      "seed": 20306,
+      "policy": "explore",
+      "length": 1340,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 307,
+      "seed": 20307,
+      "policy": "mash",
+      "length": 1225,
+      "score": 3,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 3,
+        "miss": 27,
+        "table_bounce": 18,
+        "rim_bounce": 9,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 308,
+      "seed": 20308,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 309,
+      "seed": 20309,
+      "policy": "explore",
+      "length": 1278,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 310,
+      "seed": 20310,
+      "policy": "explore",
+      "length": 1300,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 17,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 311,
+      "seed": 20311,
+      "policy": "explore",
+      "length": 1331,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 10,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 312,
+      "seed": 20312,
+      "policy": "competent",
+      "length": 355,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "table_bounce": 3,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 313,
+      "seed": 20313,
+      "policy": "competent",
+      "length": 254,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 314,
+      "seed": 20314,
+      "policy": "explore",
+      "length": 1331,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 315,
+      "seed": 20315,
+      "policy": "explore",
+      "length": 1293,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 10,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 316,
+      "seed": 20316,
+      "policy": "explore",
+      "length": 1259,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 16,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 317,
+      "seed": 20317,
+      "policy": "competent",
+      "length": 263,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "table_bounce": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 318,
+      "seed": 20318,
+      "policy": "random",
+      "length": 1668,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 27,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 319,
+      "seed": 20319,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 320,
+      "seed": 20320,
+      "policy": "mash",
+      "length": 1119,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 9,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 321,
+      "seed": 20321,
+      "policy": "competent",
+      "length": 266,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "table_bounce": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 322,
+      "seed": 20322,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 323,
+      "seed": 20323,
+      "policy": "random",
+      "length": 1781,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 324,
+      "seed": 20324,
+      "policy": "competent",
+      "length": 339,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 325,
+      "seed": 20325,
+      "policy": "competent",
+      "length": 465,
+      "score": 6,
+      "throws": 12,
+      "terminated": true,
+      "events": {
+        "throw_released": 12,
+        "cup_sunk": 6,
+        "miss": 6,
+        "table_bounce": 1,
+        "rim_bounce": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 326,
+      "seed": 20326,
+      "policy": "explore",
+      "length": 1318,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 15,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 327,
+      "seed": 20327,
+      "policy": "competent",
+      "length": 259,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 328,
+      "seed": 20328,
+      "policy": "explore",
+      "length": 1251,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 14,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 329,
+      "seed": 20329,
+      "policy": "competent",
+      "length": 342,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "table_bounce": 1,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 330,
+      "seed": 20330,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 331,
+      "seed": 20331,
+      "policy": "explore",
+      "length": 1267,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 332,
+      "seed": 20332,
+      "policy": "competent",
+      "length": 309,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 1,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 333,
+      "seed": 20333,
+      "policy": "competent",
+      "length": 351,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 334,
+      "seed": 20334,
+      "policy": "explore",
+      "length": 1295,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 11,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 335,
+      "seed": 20335,
+      "policy": "explore",
+      "length": 1245,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 12,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 336,
+      "seed": 20336,
+      "policy": "competent",
+      "length": 260,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 337,
+      "seed": 20337,
+      "policy": "competent",
+      "length": 253,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 338,
+      "seed": 20338,
+      "policy": "explore",
+      "length": 1322,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 339,
+      "seed": 20339,
+      "policy": "competent",
+      "length": 523,
+      "score": 6,
+      "throws": 13,
+      "terminated": true,
+      "events": {
+        "throw_released": 13,
+        "cup_sunk": 6,
+        "miss": 7,
+        "table_bounce": 3,
+        "rim_bounce": 7,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 340,
+      "seed": 20340,
+      "policy": "explore",
+      "length": 1329,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 9,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 341,
+      "seed": 20341,
+      "policy": "corner",
+      "length": 1395,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 22,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 342,
+      "seed": 20342,
+      "policy": "explore",
+      "length": 1310,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 13,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 343,
+      "seed": 20343,
+      "policy": "competent",
+      "length": 446,
+      "score": 6,
+      "throws": 11,
+      "terminated": true,
+      "events": {
+        "throw_released": 11,
+        "cup_sunk": 6,
+        "miss": 5,
+        "table_bounce": 4,
+        "rim_bounce": 5,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 344,
+      "seed": 20344,
+      "policy": "explore",
+      "length": 1371,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 345,
+      "seed": 20345,
+      "policy": "competent",
+      "length": 458,
+      "score": 6,
+      "throws": 11,
+      "terminated": true,
+      "events": {
+        "throw_released": 11,
+        "cup_sunk": 6,
+        "miss": 5,
+        "rim_bounce": 5,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 346,
+      "seed": 20346,
+      "policy": "explore",
+      "length": 1297,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 13,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 347,
+      "seed": 20347,
+      "policy": "explore",
+      "length": 1293,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 11,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 348,
+      "seed": 20348,
+      "policy": "random",
+      "length": 1677,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 22,
+        "rim_bounce": 10,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 349,
+      "seed": 20349,
+      "policy": "explore",
+      "length": 1333,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 21,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 350,
+      "seed": 20350,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 351,
+      "seed": 20351,
+      "policy": "competent",
+      "length": 297,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 1,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 352,
+      "seed": 20352,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 353,
+      "seed": 20353,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 354,
+      "seed": 20354,
+      "policy": "explore",
+      "length": 1268,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 14,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 355,
+      "seed": 20355,
+      "policy": "competent",
+      "length": 470,
+      "score": 6,
+      "throws": 12,
+      "terminated": true,
+      "events": {
+        "throw_released": 12,
+        "cup_sunk": 6,
+        "miss": 6,
+        "table_bounce": 4,
+        "rim_bounce": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 356,
+      "seed": 20356,
+      "policy": "random",
+      "length": 1714,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 6,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 357,
+      "seed": 20357,
+      "policy": "competent",
+      "length": 385,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "table_bounce": 1,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 358,
+      "seed": 20358,
+      "policy": "random",
+      "length": 1847,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 18,
+        "rim_bounce": 10,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 359,
+      "seed": 20359,
+      "policy": "random",
+      "length": 1742,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 7,
+        "rim_bounce": 10,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 360,
+      "seed": 20360,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 361,
+      "seed": 20361,
+      "policy": "competent",
+      "length": 431,
+      "score": 6,
+      "throws": 11,
+      "terminated": true,
+      "events": {
+        "throw_released": 11,
+        "cup_sunk": 6,
+        "miss": 5,
+        "table_bounce": 2,
+        "rim_bounce": 5,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 362,
+      "seed": 20362,
+      "policy": "competent",
+      "length": 332,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 363,
+      "seed": 20363,
+      "policy": "competent",
+      "length": 374,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "table_bounce": 2,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 364,
+      "seed": 20364,
+      "policy": "explore",
+      "length": 1365,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 365,
+      "seed": 20365,
+      "policy": "corner",
+      "length": 1258,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 366,
+      "seed": 20366,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 367,
+      "seed": 20367,
+      "policy": "competent",
+      "length": 219,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 368,
+      "seed": 20368,
+      "policy": "competent",
+      "length": 626,
+      "score": 6,
+      "throws": 15,
+      "terminated": true,
+      "events": {
+        "throw_released": 15,
+        "cup_sunk": 6,
+        "miss": 9,
+        "table_bounce": 1,
+        "rim_bounce": 9,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 369,
+      "seed": 20369,
+      "policy": "competent",
+      "length": 307,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 370,
+      "seed": 20370,
+      "policy": "competent",
+      "length": 437,
+      "score": 6,
+      "throws": 11,
+      "terminated": true,
+      "events": {
+        "throw_released": 11,
+        "cup_sunk": 6,
+        "miss": 5,
+        "rim_bounce": 5,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 371,
+      "seed": 20371,
+      "policy": "random",
+      "length": 1566,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 12,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 372,
+      "seed": 20372,
+      "policy": "competent",
+      "length": 210,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 373,
+      "seed": 20373,
+      "policy": "explore",
+      "length": 1233,
+      "score": 3,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 3,
+        "miss": 27,
+        "table_bounce": 15,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 374,
+      "seed": 20374,
+      "policy": "random",
+      "length": 1397,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 26,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 375,
+      "seed": 20375,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 376,
+      "seed": 20376,
+      "policy": "explore",
+      "length": 1307,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 377,
+      "seed": 20377,
+      "policy": "explore",
+      "length": 1231,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 12,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 378,
+      "seed": 20378,
+      "policy": "competent",
+      "length": 354,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "table_bounce": 2,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 379,
+      "seed": 20379,
+      "policy": "mash",
+      "length": 1073,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 3,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 380,
+      "seed": 20380,
+      "policy": "explore",
+      "length": 1338,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 16,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 381,
+      "seed": 20381,
+      "policy": "mash",
+      "length": 1117,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 12,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 382,
+      "seed": 20382,
+      "policy": "competent",
+      "length": 255,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 383,
+      "seed": 20383,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 384,
+      "seed": 20384,
+      "policy": "random",
+      "length": 1598,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 9,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 385,
+      "seed": 20385,
+      "policy": "explore",
+      "length": 1273,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 386,
+      "seed": 20386,
+      "policy": "competent",
+      "length": 336,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "table_bounce": 1,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 387,
+      "seed": 20387,
+      "policy": "corner",
+      "length": 1383,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 22,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 388,
+      "seed": 20388,
+      "policy": "explore",
+      "length": 1235,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 9,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 389,
+      "seed": 20389,
+      "policy": "explore",
+      "length": 1351,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 12,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 390,
+      "seed": 20390,
+      "policy": "explore",
+      "length": 1331,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 391,
+      "seed": 20391,
+      "policy": "explore",
+      "length": 1310,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 9,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 392,
+      "seed": 20392,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 393,
+      "seed": 20393,
+      "policy": "mash",
+      "length": 1062,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 1,
+        "rim_bounce": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 394,
+      "seed": 20394,
+      "policy": "competent",
+      "length": 305,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 395,
+      "seed": 20395,
+      "policy": "explore",
+      "length": 1301,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 19,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 396,
+      "seed": 20396,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 397,
+      "seed": 20397,
+      "policy": "explore",
+      "length": 1237,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 13,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 398,
+      "seed": 20398,
+      "policy": "competent",
+      "length": 261,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 399,
+      "seed": 20399,
+      "policy": "explore",
+      "length": 1363,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 15,
+        "rim_bounce": 7,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 400,
+      "seed": 20400,
+      "policy": "explore",
+      "length": 1334,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 401,
+      "seed": 20401,
+      "policy": "corner",
+      "length": 1401,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 402,
+      "seed": 20402,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 403,
+      "seed": 20403,
+      "policy": "explore",
+      "length": 1240,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 14,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 404,
+      "seed": 20404,
+      "policy": "explore",
+      "length": 1358,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 12,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 405,
+      "seed": 20405,
+      "policy": "random",
+      "length": 2001,
+      "score": 1,
+      "throws": 29,
+      "terminated": false,
+      "events": {
+        "throw_released": 29,
+        "cup_sunk": 1,
+        "miss": 28,
+        "table_bounce": 16,
+        "rim_bounce": 14
+      }
+    },
+    {
+      "episode_id": 406,
+      "seed": 20406,
+      "policy": "corner",
+      "length": 1357,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 16,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 407,
+      "seed": 20407,
+      "policy": "competent",
+      "length": 435,
+      "score": 6,
+      "throws": 12,
+      "terminated": true,
+      "events": {
+        "throw_released": 12,
+        "cup_sunk": 6,
+        "miss": 6,
+        "rim_bounce": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 408,
+      "seed": 20408,
+      "policy": "explore",
+      "length": 1259,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 8,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 409,
+      "seed": 20409,
+      "policy": "explore",
+      "length": 1309,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 12,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 410,
+      "seed": 20410,
+      "policy": "explore",
+      "length": 1262,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 411,
+      "seed": 20411,
+      "policy": "explore",
+      "length": 1266,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 412,
+      "seed": 20412,
+      "policy": "explore",
+      "length": 1350,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 413,
+      "seed": 20413,
+      "policy": "explore",
+      "length": 1290,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "rim_bounce": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 414,
+      "seed": 20414,
+      "policy": "competent",
+      "length": 375,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 415,
+      "seed": 20415,
+      "policy": "explore",
+      "length": 1295,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 18,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 416,
+      "seed": 20416,
+      "policy": "explore",
+      "length": 1276,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 3,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 417,
+      "seed": 20417,
+      "policy": "explore",
+      "length": 1347,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 9,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 418,
+      "seed": 20418,
+      "policy": "random",
+      "length": 1692,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 12,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 419,
+      "seed": 20419,
+      "policy": "competent",
+      "length": 257,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 420,
+      "seed": 20420,
+      "policy": "explore",
+      "length": 1271,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 14,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 421,
+      "seed": 20421,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 422,
+      "seed": 20422,
+      "policy": "random",
+      "length": 1676,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 6,
+        "rim_bounce": 2,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 423,
+      "seed": 20423,
+      "policy": "corner",
+      "length": 1371,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 424,
+      "seed": 20424,
+      "policy": "corner",
+      "length": 1412,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 17,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 425,
+      "seed": 20425,
+      "policy": "explore",
+      "length": 1350,
+      "score": 1,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 1,
+        "miss": 29,
+        "table_bounce": 18,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 426,
+      "seed": 20426,
+      "policy": "explore",
+      "length": 1277,
+      "score": 2,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "cup_sunk": 2,
+        "miss": 28,
+        "table_bounce": 13,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 427,
+      "seed": 20427,
+      "policy": "random",
+      "length": 1634,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "rim_bounce": 8,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 428,
+      "seed": 20428,
+      "policy": "competent",
+      "length": 355,
+      "score": 6,
+      "throws": 10,
+      "terminated": true,
+      "events": {
+        "throw_released": 10,
+        "cup_sunk": 6,
+        "miss": 4,
+        "rim_bounce": 4,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 429,
+      "seed": 20429,
+      "policy": "competent",
+      "length": 345,
+      "score": 6,
+      "throws": 9,
+      "terminated": true,
+      "events": {
+        "throw_released": 9,
+        "cup_sunk": 6,
+        "miss": 3,
+        "table_bounce": 2,
+        "rim_bounce": 3,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 430,
+      "seed": 20430,
+      "policy": "competent",
+      "length": 303,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 2,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 431,
+      "seed": 20431,
+      "policy": "mash",
+      "length": 1047,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "rim_bounce": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 432,
+      "seed": 20432,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 433,
+      "seed": 20433,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 434,
+      "seed": 20434,
+      "policy": "explore",
+      "length": 1343,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 12,
+        "rim_bounce": 6,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 435,
+      "seed": 20435,
+      "policy": "competent",
+      "length": 297,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 1,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 436,
+      "seed": 20436,
+      "policy": "explore",
+      "length": 1301,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 11,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 437,
+      "seed": 20437,
+      "policy": "explore",
+      "length": 1370,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 15,
+        "rim_bounce": 4,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 438,
+      "seed": 20438,
+      "policy": "explore",
+      "length": 1343,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 12,
+        "rim_bounce": 9,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 439,
+      "seed": 20439,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 440,
+      "seed": 20440,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 441,
+      "seed": 20441,
+      "policy": "competent",
+      "length": 303,
+      "score": 6,
+      "throws": 8,
+      "terminated": true,
+      "events": {
+        "throw_released": 8,
+        "cup_sunk": 6,
+        "miss": 2,
+        "table_bounce": 1,
+        "rim_bounce": 2,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 442,
+      "seed": 20442,
+      "policy": "competent",
+      "length": 220,
+      "score": 6,
+      "throws": 6,
+      "terminated": true,
+      "events": {
+        "throw_released": 6,
+        "cup_sunk": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 443,
+      "seed": 20443,
+      "policy": "corner",
+      "length": 1468,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 18,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 444,
+      "seed": 20444,
+      "policy": "competent",
+      "length": 264,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "table_bounce": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 445,
+      "seed": 20445,
+      "policy": "explore",
+      "length": 1257,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 13,
+        "rim_bounce": 5,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 446,
+      "seed": 20446,
+      "policy": "corner",
+      "length": 1474,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 17,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 447,
+      "seed": 20447,
+      "policy": "competent",
+      "length": 265,
+      "score": 6,
+      "throws": 7,
+      "terminated": true,
+      "events": {
+        "throw_released": 7,
+        "cup_sunk": 6,
+        "miss": 1,
+        "table_bounce": 1,
+        "rim_bounce": 1,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 448,
+      "seed": 20448,
+      "policy": "sharp",
+      "length": 1355,
+      "score": 0,
+      "throws": 30,
+      "terminated": true,
+      "events": {
+        "throw_released": 30,
+        "miss": 30,
+        "table_bounce": 30,
+        "rim_bounce": 30,
+        "game_over": 1
+      }
+    },
+    {
+      "episode_id": 449,
+      "seed": 20449,
+      "policy": "competent",
+      "length": 494,
+      "score": 6,
+      "throws": 12,
+      "terminated": true,
+      "events": {
+        "throw_released": 12,
+        "cup_sunk": 6,
+        "miss": 6,
+        "table_bounce": 5,
+        "rim_bounce": 6,
+        "rack_cleared": 1,
+        "game_over": 1
+      }
+    }
+  ]
+}

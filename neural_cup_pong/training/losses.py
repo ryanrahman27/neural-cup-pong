@@ -15,7 +15,8 @@ import torch.nn.functional as F
 from ..models import layout as L
 
 # per-continuous-field base weights: pos(3), vel(3), aim, power, score, throws, timer
-_CONT_W = torch.tensor([2., 2., 2., 1., 1., 1., 1., 1., 0.5, 0.5, 0.5])
+# velocity upweighted (1.5): its error is what compounds over the ballistic arc.
+_CONT_W = torch.tensor([2., 2., 2., 1.5, 1.5, 1.5, 1., 1., 0.5, 0.5, 0.5])
 # events that mark a discrete transition tick (throw/sink/miss/table/rim)
 _TRANS_EVENTS = [0, 1, 2, 3, 4]
 

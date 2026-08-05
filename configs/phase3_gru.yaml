@@ -1,15 +1,15 @@
 # Neural Cup Pong — Phase 3 structured-dynamics GRU (mirrors TrainConfig).
 data_dir: data/cup_v1
 ckpt: checkpoints/phase3_gru
-window: 32
+window: 40          # >= ss_burn + ss_horizon
 hidden: 192          # ~233K params, < 0.5M
 batch: 256
 lr: 1.0e-3
 tf_epochs: 8         # teacher-forced multi-step
 ss_epochs: 6         # scheduled sampling (own snapped predictions)
 ss_burn: 4
-ss_horizon: 20
+ss_horizon: 24
 ss_tf_start: 1.0
-ss_tf_end: 0.4
+ss_tf_end: 0.4       # gentle free-run (harder schedules destabilized); keep-best
 steps_per_epoch: 200
 seed: 0
