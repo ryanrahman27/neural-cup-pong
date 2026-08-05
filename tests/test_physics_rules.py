@@ -53,6 +53,21 @@ def test_sink_removes_cup_and_scores():
     assert ev[_EV["cup_sunk"]] == 1 and st.game_phase == C.PHASE_RESULT
 
 
+def test_rim_bounce_deflects_and_stays_live():
+    st = build_initial()
+    st.game_phase = C.PHASE_FLIGHT
+    cups = C.cup_layout()
+    # land on the rim ring: just inside CUP_R + BALL_R, outside CUP_R - BALL_R
+    st.ball_position[:] = [cups[0, 0] + C.CUP_R, cups[0, 1], C.CUP_RIM_Z + 0.3]
+    st.ball_velocity[:] = [0.0, 0.0, -40.0]
+    ev = empty_events()
+    physics.integrate_flight(st, ev)
+    assert ev[_EV["rim_bounce"]] == 1
+    assert st.ball_velocity[2] > 0            # popped up
+    assert st.game_phase == C.PHASE_FLIGHT    # still live
+    assert st.cups_present[0] == 1 and st.score == 0
+
+
 def test_miss_on_table():
     st = build_initial()
     st.game_phase = C.PHASE_FLIGHT

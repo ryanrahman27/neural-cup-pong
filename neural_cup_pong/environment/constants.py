@@ -33,8 +33,14 @@ POWER_RATE: float = 0.9             # power/s while held (power in [0,1])
 BALL_R: float = 1.6
 CUP_R: float = 4.0                  # mouth radius
 CUP_H: float = 9.0                  # cup height
-CUP_RIM_Z: float = 8.0              # sink test height
+CUP_RIM_Z: float = 8.0              # sink/rim-contact test height
 RESTITUTION: float = 0.45           # table bounce on a miss
+
+# Rim bounce: ball catches the rim ring (not clean through the hole) -> deflect.
+RIM_RESTITUTION: float = 0.5        # vertical bounce energy kept
+RIM_POP: float = 9.0                # extra upward pop on a rim hit
+RIM_KICK: float = 15.0              # outward horizontal impulse
+RIM_HDAMP: float = 0.55             # horizontal damping on a rim hit
 
 NUM_CUPS: int = 6                   # triangular rack (3 + 2 + 1)
 
@@ -57,6 +63,7 @@ def cup_layout() -> np.ndarray:
 # --- Game --------------------------------------------------------------------
 RESULT_STEPS: int = 26              # frozen frames after a throw lands
 MAX_THROWS: int = 30                # safety cap (win = clear the rack)
+MAX_FLIGHT_STEPS: int = 300         # force a miss if a flight rattles too long (~5s)
 
 # --- Phases ------------------------------------------------------------------
 PHASE_AIM: int = 0

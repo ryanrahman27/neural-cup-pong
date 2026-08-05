@@ -20,6 +20,7 @@ class GameState:
     throws_used: int
     game_phase: int               # PHASE_* constant
     result_timer: int             # frames left in the frozen result phase
+    flight_steps: int = 0         # physics steps in the current flight (safety cap)
     step_index: int = 0
     rng_draw: float = 0.0
 
@@ -51,6 +52,7 @@ class GameState:
             throws_used=self.throws_used,
             game_phase=self.game_phase,
             result_timer=self.result_timer,
+            flight_steps=self.flight_steps,
             step_index=self.step_index,
             rng_draw=self.rng_draw,
         )
@@ -61,8 +63,9 @@ EVENT_NAMES: tuple[str, ...] = (
     "cup_sunk",        # 1
     "miss",            # 2
     "table_bounce",    # 3
-    "rack_cleared",    # 4
-    "game_over",       # 5
+    "rim_bounce",      # 4
+    "rack_cleared",    # 5
+    "game_over",       # 6
 )
 EVENT_DIM: int = len(EVENT_NAMES)
 

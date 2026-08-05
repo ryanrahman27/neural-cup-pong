@@ -29,10 +29,15 @@ def launch(state: GameState) -> None:
     vz = speed * float(np.sin(C.LAUNCH_ELEV))
     state.ball_position[:] = C.THROW_ORIGIN
     state.ball_velocity[:] = [hs * float(np.sin(angle)), hs * float(np.cos(angle)), vz]
+    state.flight_steps = 0
     state.game_phase = C.PHASE_FLIGHT
 
 
 def integrate_flight(state: GameState, events: np.ndarray) -> None:
+    state.flight_steps += 1
+    if state.flight_steps > C.MAX_FLIGHT_STEPS:   # rattled too long -> call it a miss
+        _end_flight(state, events, sunk_cup=-1)
+        return
     bp, bv = state.ball_position, state.ball_velocity
     bv[2] -= C.GRAVITY * C.DT
     bp += bv * C.DT
@@ -42,12 +47,20 @@ def integrate_flight(state: GameState, events: np.ndarray) -> None:
         _end_flight(state, events, sunk_cup=-1)
         return
 
-    # descending through the cup rim -> sink test
+    # descending near rim height -> clean make / rim clip / past
     if bv[2] < 0 and bp[2] <= C.CUP_RIM_Z:
         cups = C.cup_layout()
         for c in range(C.NUM_CUPS):
-            if state.cups_present[c] and float(np.hypot(bp[0] - cups[c, 0], bp[1] - cups[c, 1])) <= C.CUP_R:
+            if not state.cups_present[c]:
+                continue
+            dx = float(bp[0] - cups[c, 0])
+            dy = float(bp[1] - cups[c, 1])
+            d = float(np.hypot(dx, dy))
+            if d <= C.CUP_R - C.BALL_R:          # fits through the hole -> make
                 _end_flight(state, events, sunk_cup=c)
+                return
+            if d <= C.CUP_R + C.BALL_R:          # caught the rim -> bounce out, stay live
+                _rim_bounce(state, events, float(cups[c, 0]), float(cups[c, 1]), dx, dy, d)
                 return
 
     # hit the table -> miss
@@ -55,6 +68,26 @@ def integrate_flight(state: GameState, events: np.ndarray) -> None:
         bp[2] = C.BALL_R
         events[_EV["table_bounce"]] = 1
         _end_flight(state, events, sunk_cup=-1)
+
+
+def _rim_bounce(state, events, cx, cy, dx, dy, d) -> None:
+    """Deflect the ball off a cup rim: pop up + kick outward, keep it in flight."""
+    bp, bv = state.ball_position, state.ball_velocity
+    nx, ny = (1.0, 0.0) if d < 1e-4 else (dx / d, dy / d)
+    # bounce up
+    bv[2] = abs(bv[2]) * C.RIM_RESTITUTION + C.RIM_POP
+    # reflect any inward horizontal motion, damp, then add an outward kick
+    v_in = bv[0] * nx + bv[1] * ny
+    if v_in < 0:
+        bv[0] -= (1.0 + C.RIM_RESTITUTION) * v_in * nx
+        bv[1] -= (1.0 + C.RIM_RESTITUTION) * v_in * ny
+    bv[0] = bv[0] * C.RIM_HDAMP + nx * C.RIM_KICK
+    bv[1] = bv[1] * C.RIM_HDAMP + ny * C.RIM_KICK
+    # seat the ball just outside the rim, above rim height, so it can't re-trigger
+    bp[0] = cx + nx * (C.CUP_R + C.BALL_R + 0.1)
+    bp[1] = cy + ny * (C.CUP_R + C.BALL_R + 0.1)
+    bp[2] = C.CUP_RIM_Z + 0.2
+    events[_EV["rim_bounce"]] = 1
 
 
 def _end_flight(state: GameState, events: np.ndarray, sunk_cup: int) -> None:
