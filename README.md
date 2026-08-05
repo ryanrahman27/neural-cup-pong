@@ -13,9 +13,13 @@ shot at staying controllable and stable over long autoregressive rollouts. Cups
 carry a **presence bitmask** and the ball a **3D position** — both are natural
 auxiliary-supervision targets that keep the pixels easy. Original art throughout.
 
-> **Status: Phase 1 complete** — deterministic engine, structured state, 2.5D
-> renderer (table / cups / ball+shadow / aim reticle / HUD), tests, and
-> keyboard aim-and-throw gameplay.
+> **Status: all phases complete (1–6).** Deterministic engine → data pipeline →
+> structured-dynamics GRU → engine-off learned sim → visual world model →
+> **fully-generated neural gameplay** (engine *and* renderer off, ~213 Hz on an
+> RTX 4060). Play it: `python -m neural_cup_pong.play.play_world_model` then press
+> **F1** (engine) / **F2** (neural state) / **F3** (fully generated).
+
+![real vs neural](assets/phase5_gt_vs_neural.png)
 
 ## Quick start
 
@@ -47,11 +51,11 @@ obs, state, reward, terminated, truncated, info = env.step(A.make_action(throw=T
 ## Roadmap
 
 1. **Deterministic engine** ✅
-2. Dataset collection (human + scripted + adversarial coverage)
-3. Structured-dynamics baseline (state → next state)
-4. Renderer-based learned playable simulator
-5. Latent visual world model (autoencoder + action-conditioned latent dynamics)
-6. Fully generated neural gameplay (engine **and** renderer off)
+2. **Dataset collection** ✅ (recorder, exploration mixture, validation)
+3. **Structured-dynamics baseline** ✅ (~233K GRU; controllable + legal)
+4. **Renderer-based learned playable simulator** ✅ (engine off, F2)
+5. **Visual world model** ✅ (state-grounded neural decoder, ~262K; near-pixel-perfect)
+6. **Fully generated neural gameplay** ✅ (engine **and** renderer off, F3, ~213 Hz)
 
 ## License
 
