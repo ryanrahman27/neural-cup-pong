@@ -22,6 +22,7 @@ import numpy as np
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(description="Play Neural Cup Pong (engine vs neural world model).")
     p.add_argument("--ckpt", default="checkpoints/phase3_gru")
+    p.add_argument("--visual-ckpt", default="checkpoints/phase5_decoder")
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--scale", type=int, default=None)
     p.add_argument("--start-neural", action="store_true")
@@ -38,6 +39,20 @@ def main(argv=None) -> int:
     from neural_cup_pong.eval.evaluate import load_model
 
     model, device = load_model(args.ckpt)
+
+    # optional Phase-5 neural decoder for the F3 fully-generated mode
+    decoder = None
+    try:
+        import os as _os
+        if _os.path.exists(args.visual_ckpt + ".pt"):
+            from neural_cup_pong.models.visual.autoencoder import Decoder
+            from neural_cup_pong.models.visual.geometry import geometry_hints as _ghints
+            decoder = Decoder().to(device)
+            decoder.load_state_dict(torch.load(args.visual_ckpt + ".pt", map_location=device)["decoder"])
+            decoder.eval()
+            print("F3 available: neural decoder loaded (engine + renderer OFF)")
+    except Exception as e:
+        print(f"F3 unavailable ({e})")
 
     scale = args.scale or C.DISPLAY_SCALE
     disp_w, disp_h = C.OBS_W * scale, C.OBS_H * scale
@@ -79,6 +94,8 @@ def main(argv=None) -> int:
                     mode = "engine"
                 elif event.key == pygame.K_F2:
                     mode = "neural"; enter_neural()
+                elif event.key == pygame.K_F3 and decoder is not None:
+                    mode = "generated"; enter_neural()   # engine AND renderer OFF
 
         while acc >= world_dt:
             keys = pygame.key.get_pressed()
@@ -99,8 +116,14 @@ def main(argv=None) -> int:
                 lvec = nv[0].cpu().numpy()
             acc -= world_dt
 
-        cur_state = env.state if mode == "engine" else St.from_vector(lvec)
-        frame = env._renderer.render(cur_state)
+        if mode == "generated":                 # engine OFF and renderer OFF
+            with torch.no_grad():
+                lv = torch.tensor(lvec, dtype=torch.float32, device=device)[None]
+                gen = decoder(lv, _ghints(lv))[0]
+                frame = (gen.permute(1, 2, 0).clamp(0, 1) * 255).to(torch.uint8).cpu().numpy()
+        else:
+            cur_state = env.state if mode == "engine" else St.from_vector(lvec)
+            frame = env._renderer.render(cur_state)
         surf = pygame.transform.scale(
             pygame.surfarray.make_surface(np.transpose(frame, (1, 0, 2))), (disp_w, disp_h))
         screen.blit(surf, (0, 0))
@@ -115,15 +138,18 @@ def _overlay(screen, font, mode, fps) -> None:
     import pygame
 
     w, h = screen.get_width(), screen.get_height()
-    neural = mode == "neural"
     strip = pygame.Surface((w, 42), pygame.SRCALPHA)
     strip.fill((0, 0, 0, 170))
     screen.blit(strip, (0, h - 42))
-    c = (250, 120, 90) if neural else (120, 230, 140)
-    l1 = font.render(f"GAME ENGINE ACTIVE: {'NO' if neural else 'YES'}   |   "
-                     f"WORLD: {'NEURAL MODEL (233K)' if neural else 'DETERMINISTIC ENGINE'}", True, c)
-    l2 = font.render("F1 engine   F2 neural   |   Arrows aim/power  Space throw  R reset  Esc quit"
-                     f"   |   {fps:3.0f}fps", True, (210, 210, 210))
+    info = {
+        "engine":    ("YES", "WORLD: DETERMINISTIC ENGINE",           (120, 230, 140)),
+        "neural":    ("NO",  "WORLD: NEURAL STATE (233K) + renderer",  (250, 200, 90)),
+        "generated": ("NO",  "WORLD: NEURAL STATE + NEURAL DECODER (engine + renderer OFF)", (250, 110, 90)),
+    }[mode]
+    l1 = font.render(f"GAME ENGINE ACTIVE: {info[0]}   |   {info[1]}", True, info[2])
+    l2 = font.render("F1 engine   F2 neural-state   F3 fully-generated   |   "
+                     f"Arrows aim/power  Space throw  R reset  Esc quit   |   {fps:3.0f}fps",
+                     True, (210, 210, 210))
     screen.blit(l1, (6, h - 40))
     screen.blit(l2, (6, h - 20))
 
