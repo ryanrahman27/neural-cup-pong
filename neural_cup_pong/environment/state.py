@@ -58,6 +58,49 @@ class GameState:
         )
 
 
+def vector_offsets() -> dict[str, tuple[int, int]]:
+    """`{field: (start, end)}` slices into `to_vector` (recomputed from layout)."""
+    o: dict[str, tuple[int, int]] = {}
+    i = 0
+
+    def take(name: str, size: int) -> None:
+        nonlocal i
+        o[name] = (i, i + size)
+        i += size
+
+    take("ball_position", 3)
+    take("ball_velocity", 3)
+    take("aim_x", 1)
+    take("power", 1)
+    take("cups_present", C.NUM_CUPS)
+    take("scores", 2)          # score, throws_used
+    take("phase_onehot", 4)
+    take("result_timer", 1)
+    return o
+
+
+def decode_vector(vec: np.ndarray) -> dict:
+    off = vector_offsets()
+
+    def sl(name):
+        a, b = off[name]
+        return vec[a:b]
+
+    scores = sl("scores")
+    cups = sl("cups_present")
+    return {
+        "ball_position": sl("ball_position"),
+        "ball_velocity": sl("ball_velocity"),
+        "aim_x": float(sl("aim_x")[0]),
+        "power": float(sl("power")[0]),
+        "cups_present": cups,
+        "cups_left": int(round(float(cups.sum()))),
+        "score": int(round(float(scores[0]))),
+        "throws_used": int(round(float(scores[1]))),
+        "game_phase": int(np.argmax(sl("phase_onehot"))),
+    }
+
+
 EVENT_NAMES: tuple[str, ...] = (
     "throw_released",  # 0
     "cup_sunk",        # 1
