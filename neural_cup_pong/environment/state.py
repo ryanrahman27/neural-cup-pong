@@ -79,6 +79,29 @@ def vector_offsets() -> dict[str, tuple[int, int]]:
     return o
 
 
+def from_vector(vec: np.ndarray) -> "GameState":
+    """Reconstruct a GameState from a flat state vector (for rendering learned,
+    engine-off predictions in Phase 4)."""
+    off = vector_offsets()
+
+    def sl(name):
+        a, b = off[name]
+        return vec[a:b]
+
+    scores = sl("scores")
+    return GameState(
+        ball_position=np.asarray(sl("ball_position"), dtype=np.float32).copy(),
+        ball_velocity=np.asarray(sl("ball_velocity"), dtype=np.float32).copy(),
+        aim_x=float(sl("aim_x")[0]),
+        power=float(sl("power")[0]),
+        cups_present=(np.asarray(sl("cups_present")) > 0.5).astype(np.int32),
+        score=int(round(float(scores[0]))),
+        throws_used=int(round(float(scores[1]))),
+        game_phase=int(np.argmax(sl("phase_onehot"))),
+        result_timer=int(round(float(sl("result_timer")[0]))),
+    )
+
+
 def decode_vector(vec: np.ndarray) -> dict:
     off = vector_offsets()
 

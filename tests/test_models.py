@@ -74,6 +74,39 @@ def test_rollout_stays_legal(tmp_path):
     assert (np.diff(scores) >= -1e-6).all()               # score non-decreasing
 
 
+def test_from_vector_roundtrip():
+    from neural_cup_pong.environment import state as St
+    from neural_cup_pong.environment.rules import build_initial
+    s = build_initial()
+    s.aim_x, s.power = 0.3, 0.7
+    s.ball_position[:] = [12.0, 40.0, 18.0]
+    s2 = St.from_vector(s.to_vector())
+    assert np.allclose(s2.ball_position, s.ball_position, atol=1e-4)
+    assert abs(s2.aim_x - s.aim_x) < 1e-4 and abs(s2.power - s.power) < 1e-4
+    assert s2.game_phase == s.game_phase and (s2.cups_present == s.cups_present).all()
+
+
+def test_engine_off_learned_render(tmp_path):
+    """Phase-4 pipeline: model advances state (engine OFF), renderer draws it."""
+    from neural_cup_pong.environment import actions as A
+    from neural_cup_pong.environment import state as St
+    from neural_cup_pong.environment.game import NeuralCupPongEnv
+    from neural_cup_pong.environment.renderer import Renderer
+    ds = _small_dataset(tmp_path)
+    model = build_model(fit_normalizer(ds), hidden=192)
+    env = NeuralCupPongEnv(); _, s = env.reset(seed=0)
+    lvec = torch.tensor(s.to_vector())[None]
+    h = None
+    R = Renderer()
+    for t in range(30):
+        a = torch.tensor(A.make_action(throw=(t == 5)))[None]
+        lvec, h = model.predict_step(lvec, a, h)      # engine never stepped
+        gs = St.from_vector(lvec[0].numpy())
+        frame = R.render(gs)
+        assert frame.shape == (C.OBS_H, C.OBS_W, 3)
+        assert gs.score == C.NUM_CUPS - int(gs.cups_present.sum())   # legal
+
+
 def test_train_smoke(tmp_path):
     from neural_cup_pong.training.train import TrainConfig, main
     collect_dataset(str(tmp_path / "d"), num_episodes=3, base_seed=1, max_steps=300, verbose=False)
