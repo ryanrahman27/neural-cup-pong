@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neural-cup-pong"
+version = "0.1.0"
+description = "A compact action-conditioned world model for an original fixed-camera 2.5D cup-toss game."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24", "pygame>=2.5", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+train = ["torch>=2.1", "tensorboard>=2.14", "h5py>=3.9", "tqdm>=4.66"]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+neural-cup-pong-play = "neural_cup_pong.play.play_engine:main"
+
+[tool.setuptools.packages.find]
+include = ["neural_cup_pong*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::UserWarning"]
