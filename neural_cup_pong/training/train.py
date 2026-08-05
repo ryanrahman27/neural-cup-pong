@@ -1,0 +1,136 @@
+"""Train the structured-dynamics GRU (Phase 3).
+
+Curriculum: teacher-forced multi-step (fast, nails local dynamics) then
+scheduled sampling that feeds the model its own SNAP-projected predictions
+(fights exposure bias for stable autoregressive rollout). Trains on GPU if
+available. Saves ``<ckpt>.pt`` + ``<ckpt>.norm.npz`` + ``<ckpt>.json``.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import time
+from dataclasses import dataclass, asdict
+
+import numpy as np
+import torch
+
+from ..data.dataset import TrajectoryDataset
+from ..models import layout as L
+from ..models import projection
+from ..models.dynamics_gru import build_model
+from ..models.normalizer import fit_normalizer
+from .losses import DynamicsLoss
+
+
+@dataclass
+class TrainConfig:
+    data_dir: str = "data/cup_v1"
+    ckpt: str = "checkpoints/phase3_gru"
+    window: int = 32
+    hidden: int = 192
+    batch: int = 256
+    lr: float = 1e-3
+    tf_epochs: int = 8
+    ss_epochs: int = 6
+    ss_burn: int = 4
+    ss_horizon: int = 20
+    ss_tf_start: float = 1.0
+    ss_tf_end: float = 0.4
+    steps_per_epoch: int = 200
+    seed: int = 0
+
+
+def _load_tensors(ds: TrajectoryDataset, device):
+    eps = []
+    for ep in ds.iter_episodes():
+        T = ep.states.shape[0]
+        eps.append({
+            "states": torch.tensor(ep.states, dtype=torch.float32, device=device),
+            "actions": torch.tensor(ep.actions, dtype=torch.float32, device=device),
+            "events": torch.tensor(ep.events, dtype=torch.float32, device=device),
+            "max_start": T - 1 - ds.window,
+        })
+    return [e for e in eps if e["max_start"] >= 0]
+
+
+def _sample_batch(eps, window, batch, rng):
+    B = batch
+    ei = rng.integers(0, len(eps), size=B)
+    S = torch.empty(B, window + 1, L.STATE_DIM, device=eps[0]["states"].device)
+    A = torch.empty(B, window, L.ACTION_DIM, device=S.device)
+    E = torch.empty(B, window, L.EVENT_DIM, device=S.device)
+    for b in range(B):
+        e = eps[int(ei[b])]
+        s = int(rng.integers(0, e["max_start"] + 1))
+        S[b] = e["states"][s:s + window + 1]
+        A[b] = e["actions"][s:s + window]
+        E[b] = e["events"][s:s + window]
+    return S, A, E
+
+
+def main(cfg: TrainConfig):
+    torch.manual_seed(cfg.seed)
+    rng = np.random.default_rng(cfg.seed)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    ds = TrajectoryDataset(cfg.data_dir, window=cfg.window, with_frames=False, preload=True)
+    norm = fit_normalizer(ds)
+    model = build_model(norm, hidden=cfg.hidden).to(device)
+    loss_fn = DynamicsLoss(norm).to(device)
+    opt = torch.optim.Adam(model.parameters(), lr=cfg.lr)
+    eps = _load_tensors(ds, device)
+    print(f"device={device}  params={model.param_count()}  episodes={len(eps)}  "
+          f"windows~{sum(e['max_start']+1 for e in eps)}")
+
+    def teacher_forced_epoch():
+        model.train(); tot = 0.0
+        for _ in range(cfg.steps_per_epoch):
+            S, A, E = _sample_batch(eps, cfg.window, cfg.batch, rng)
+            heads, _ = model(S[:, :cfg.window], A)
+            loss, _ = loss_fn(heads, S[:, :cfg.window], S[:, 1:], E)
+            opt.zero_grad(); loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
+            opt.step(); tot += float(loss)
+        return tot / cfg.steps_per_epoch
+
+    def scheduled_epoch(tf_prob):
+        model.train(); tot = 0.0
+        W, burn, H = cfg.window, cfg.ss_burn, cfg.ss_horizon
+        for _ in range(cfg.steps_per_epoch):
+            S, A, E = _sample_batch(eps, W, cfg.batch, rng)
+            _, h = model(S[:, :burn], A[:, :burn])         # warm hidden state (GT)
+            cur = S[:, burn]
+            losses = []
+            for t in range(burn, burn + H):
+                heads, h = model.forward_step(cur, A[:, t], h)
+                loss, _ = loss_fn({k: v for k, v in heads.items()},
+                                  cur, S[:, t + 1], E[:, t])
+                losses.append(loss)
+                with torch.no_grad():
+                    cont_next = norm.apply_cont(cur, heads["cont"])
+                    pred = projection.snap_batch(cur, cont_next, heads["cups"], heads["phase"])
+                use_gt = (torch.rand(cur.shape[0], 1, device=device) < tf_prob).float()
+                cur = (use_gt * S[:, t + 1] + (1 - use_gt) * pred).detach()
+            loss = torch.stack(losses).mean()
+            opt.zero_grad(); loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
+            opt.step(); tot += float(loss)
+        return tot / cfg.steps_per_epoch
+
+    t0 = time.time()
+    for e in range(cfg.tf_epochs):
+        print(f"[TF {e+1}/{cfg.tf_epochs}] loss={teacher_forced_epoch():.4f}  ({time.time()-t0:.0f}s)")
+    for e in range(cfg.ss_epochs):
+        frac = e / max(1, cfg.ss_epochs - 1)
+        tf_prob = cfg.ss_tf_start + (cfg.ss_tf_end - cfg.ss_tf_start) * frac
+        print(f"[SS {e+1}/{cfg.ss_epochs} tf={tf_prob:.2f}] loss={scheduled_epoch(tf_prob):.4f}  ({time.time()-t0:.0f}s)")
+
+    os.makedirs(os.path.dirname(os.path.abspath(cfg.ckpt)), exist_ok=True)
+    torch.save({"model": model.state_dict(), "hidden": cfg.hidden}, cfg.ckpt + ".pt")
+    norm.save(cfg.ckpt + ".norm.npz")
+    with open(cfg.ckpt + ".json", "w") as f:
+        json.dump(asdict(cfg), f, indent=2)
+    print(f"saved {cfg.ckpt}.pt (+ .norm.npz, .json)")
+    return model
