@@ -55,15 +55,18 @@ def _load_tensors(ds: TrajectoryDataset, device):
     return [e for e in eps if e["max_start"] >= 0]
 
 
-def _sample_batch(eps, window, batch, rng):
+def _sample_batch(eps, window, batch, rng, event_pool=None, event_frac=0.0):
     B = batch
-    ei = rng.integers(0, len(eps), size=B)
     S = torch.empty(B, window + 1, L.STATE_DIM, device=eps[0]["states"].device)
     A = torch.empty(B, window, L.ACTION_DIM, device=S.device)
     E = torch.empty(B, window, L.EVENT_DIM, device=S.device)
     for b in range(B):
-        e = eps[int(ei[b])]
-        s = int(rng.integers(0, e["max_start"] + 1))
+        if event_pool and rng.random() < event_frac:      # oversample sink windows
+            ei_b, s = event_pool[int(rng.integers(0, len(event_pool)))]
+        else:
+            ei_b = int(rng.integers(0, len(eps)))
+            s = int(rng.integers(0, eps[ei_b]["max_start"] + 1))
+        e = eps[ei_b]
         S[b] = e["states"][s:s + window + 1]
         A[b] = e["actions"][s:s + window]
         E[b] = e["events"][s:s + window]
@@ -81,13 +84,19 @@ def main(cfg: TrainConfig):
     loss_fn = DynamicsLoss(norm).to(device)
     opt = torch.optim.Adam(model.parameters(), lr=cfg.lr)
     eps = _load_tensors(ds, device)
+    # pool of window starts straddling a cup_sunk tick (rare -> oversample so the
+    # model actually learns to fire sinks instead of collapsing to "never change")
+    event_pool = []
+    for ei, e in enumerate(eps):
+        for t in torch.where(e["events"][:, 1] > 0)[0].tolist():
+            event_pool.append((ei, int(np.clip(t - cfg.window // 2, 0, e["max_start"]))))
     print(f"device={device}  params={model.param_count()}  episodes={len(eps)}  "
-          f"windows~{sum(e['max_start']+1 for e in eps)}")
+          f"windows~{sum(e['max_start']+1 for e in eps)}  sink_windows={len(event_pool)}")
 
     def teacher_forced_epoch():
         model.train(); tot = 0.0
         for _ in range(cfg.steps_per_epoch):
-            S, A, E = _sample_batch(eps, cfg.window, cfg.batch, rng)
+            S, A, E = _sample_batch(eps, cfg.window, cfg.batch, rng, event_pool, 0.5)
             heads, _ = model(S[:, :cfg.window], A)
             loss, _ = loss_fn(heads, S[:, :cfg.window], S[:, 1:], E)
             opt.zero_grad(); loss.backward()
@@ -100,7 +109,7 @@ def main(cfg: TrainConfig):
         W, burn = cfg.window, cfg.ss_burn
         H = min(cfg.ss_horizon, W - burn)          # must fit inside the window
         for _ in range(cfg.steps_per_epoch):
-            S, A, E = _sample_batch(eps, W, cfg.batch, rng)
+            S, A, E = _sample_batch(eps, W, cfg.batch, rng, event_pool, 0.5)
             _, h = model(S[:, :burn], A[:, :burn])         # warm hidden state (GT)
             cur = S[:, burn]
             losses = []

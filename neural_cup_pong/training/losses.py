@@ -43,7 +43,9 @@ class DynamicsLoss(nn.Module):
         cont_loss = (huber * w).mean()
 
         cups_bce = F.binary_cross_entropy_with_logits(
-            heads["cups"], nxt[..., L.CUPS], reduction="none").mean(-1)     # [...]
+            heads["cups"], nxt[..., L.CUPS], reduction="none")             # [...,6]
+        cup_flip = (nxt[..., L.CUPS] != cur[..., L.CUPS]).float()          # rare 1->0 flips
+        cups_bce = (cups_bce * (1.0 + 25.0 * cup_flip)).mean(-1)          # upweight the flip
         cups_loss = (cups_bce * trans_w).mean()
 
         phase_tgt = nxt[..., L.PHASE].argmax(-1)

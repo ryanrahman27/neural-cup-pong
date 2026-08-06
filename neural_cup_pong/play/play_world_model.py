@@ -62,6 +62,9 @@ def main(argv=None) -> int:
     clock = pygame.time.Clock()
     font = pygame.font.SysFont("consolas", max(11, scale * 3))
 
+    from neural_cup_pong.models.hybrid import HybridWorldModel
+    hybrid = HybridWorldModel(model, device)
+
     env = NeuralCupPongEnv()
     env.reset(seed=args.seed)
     mode = "neural" if args.start_neural else "engine"
@@ -72,6 +75,7 @@ def main(argv=None) -> int:
         nonlocal lvec, h
         lvec = env.state.to_vector()       # seed the learned sim from the current state
         h = None
+        hybrid.reset(lvec)
 
     if mode == "neural":
         enter_neural()
@@ -108,6 +112,8 @@ def main(argv=None) -> int:
             )
             if mode == "engine":
                 env.step(act)
+            elif mode == "generated":
+                lvec, _ = hybrid.step(act)         # neural control + exact ballistic flight
             else:
                 with torch.no_grad():
                     lv = torch.tensor(lvec, dtype=torch.float32, device=device)[None]
@@ -143,8 +149,8 @@ def _overlay(screen, font, mode, fps) -> None:
     screen.blit(strip, (0, h - 42))
     info = {
         "engine":    ("YES", "WORLD: DETERMINISTIC ENGINE",           (120, 230, 140)),
-        "neural":    ("NO",  "WORLD: NEURAL STATE (233K) + renderer",  (250, 200, 90)),
-        "generated": ("NO",  "WORLD: NEURAL STATE + NEURAL DECODER (engine + renderer OFF)", (250, 110, 90)),
+        "neural":    ("NO",  "WORLD: PURE NEURAL STATE (learned dynamics) + renderer",  (250, 200, 90)),
+        "generated": ("NO",  "WORLD: NEURAL CONTROL + BALLISTIC FLIGHT + NEURAL DECODER (renderer OFF)", (250, 110, 90)),
     }[mode]
     l1 = font.render(f"GAME ENGINE ACTIVE: {info[0]}   |   {info[1]}", True, info[2])
     l2 = font.render("F1 engine   F2 neural-state   F3 fully-generated   |   "

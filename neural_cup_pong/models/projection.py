@@ -23,6 +23,7 @@ _LEGAL = torch.tensor([
     [0, 0, 0, 1],   # GAME_OVER -> GAME_OVER
 ], dtype=torch.float32)
 _ORIGIN = torch.tensor(C.THROW_ORIGIN, dtype=torch.float32)
+_CUPS = torch.tensor(C.cup_layout(), dtype=torch.float32)   # [6,2]
 
 
 def snap_batch(prev: torch.Tensor, cont_next: torch.Tensor,
@@ -43,23 +44,39 @@ def snap_batch(prev: torch.Tensor, cont_next: torch.Tensor,
     nxt[:, L.POWER] = nxt[:, L.POWER].clamp(0.0, 1.0)
     nxt[:, 2] = nxt[:, 2].clamp(min=0.0)                      # ball z >= 0
 
-    # cups: threshold + monotone (a present cup may sink, never reappear)
-    cups_pred = (torch.sigmoid(cups_logits) > 0.5).float()
-    nxt_cups = torch.minimum(prev[:, L.CUPS], cups_pred)
+    # --- rule-based flight resolution (from the model's PREDICTED ball) --------
+    # The cups head under-fires the rare 1-tick sink flip, so instead resolve the
+    # sink with the known game rule applied to the predicted ball position (same
+    # spirit as snap's other legality rules). The model still predicts the flight.
+    cups = _CUPS.to(dev)
+    prev_cups = prev[:, L.CUPS]
+    in_flight = prev_phase == C.PHASE_FLIGHT
+    bz, bvz = nxt[:, 2], nxt[:, 5]
+    dists = torch.cdist(nxt[:, 0:2], cups) + (1.0 - prev_cups) * 1e9   # mask absent cups
+    mind, minc = dists.min(-1)                                # [B]
+    sink = in_flight & (bvz < 0) & (bz <= C.CUP_RIM_Z) & (mind <= C.SINK_RADIUS)
+    hit_table = in_flight & (bz <= C.BALL_R)                  # miss -> ends flight too
+    nxt_cups = prev_cups.clone()
+    if sink.any():
+        rows = torch.where(sink)[0]
+        nxt_cups[rows, minc[rows]] = 0.0
     nxt[:, L.CUPS] = nxt_cups
-    # score derived from cups; throws monotone non-decreasing, rounded
     nxt[:, L.SCORE] = C.NUM_CUPS - nxt_cups.sum(-1)
     nxt[:, L.THROWS] = torch.maximum(nxt[:, L.THROWS].round(), prev[:, L.THROWS])
+    # a sink or a table-hit ends the throw -> force RESULT
+    end_flight = sink | hit_table
+    next_phase = torch.where(end_flight, torch.full_like(next_phase, C.PHASE_RESULT), next_phase)
 
     # phase one-hot
     ph = torch.zeros_like(nxt[:, L.PHASE])
     ph.scatter_(1, next_phase[:, None], 1.0)
     nxt[:, L.PHASE] = ph
 
-    # timer only lives in RESULT
+    # timer only lives in RESULT (fresh RESULT_STEPS when a flight just ended)
     not_result = next_phase != C.PHASE_RESULT
     nxt[not_result, L.TIMER] = 0.0
     nxt[:, L.TIMER] = nxt[:, L.TIMER].round().clamp(0.0, float(C.RESULT_STEPS))
+    nxt[end_flight, L.TIMER] = float(C.RESULT_STEPS)
 
     # phase-conditioned parking
     is_aim = next_phase == C.PHASE_AIM
