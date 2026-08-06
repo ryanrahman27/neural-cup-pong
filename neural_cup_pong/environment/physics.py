@@ -22,6 +22,27 @@ def update_aim(state: GameState, action: np.ndarray) -> None:
     state.power = float(np.clip(state.power + dpow * C.POWER_RATE * C.DT, 0.0, 1.0))
 
 
+def simulate_landing(aim_x: float, power: float, max_steps: int = 240):
+    """Where the ball crosses the cup-mouth plane (z = CUP_RIM_Z) descending —
+    i.e. where a cup would catch it. This is the honest aim reticle: put it on a
+    cup and the throw drops in. (Integrates the same ballistic step as flight.)"""
+    angle = float(aim_x) * C.MAX_AIM_ANGLE
+    speed = C.POWER_MIN + (C.POWER_MAX - C.POWER_MIN) * float(power)
+    hs = speed * float(np.cos(C.LAUNCH_ELEV))
+    vx, vy = hs * float(np.sin(angle)), hs * float(np.cos(angle))
+    vz = speed * float(np.sin(C.LAUNCH_ELEV))
+    x, y, z = (float(v) for v in C.THROW_ORIGIN)
+    for _ in range(max_steps):
+        zb = z
+        vz -= C.GRAVITY * C.DT
+        x += vx * C.DT; y += vy * C.DT; z += vz * C.DT
+        if vz < 0 and zb > C.CUP_RIM_Z >= z:          # descending rim-plane crossing
+            break
+        if z <= 0.0 or x < 0 or x > C.TABLE_W or y < 0 or y > C.TABLE_D:
+            break
+    return float(np.clip(x, 0, C.TABLE_W)), float(np.clip(y, 0, C.TABLE_D))
+
+
 def launch(state: GameState) -> None:
     angle = state.aim_x * C.MAX_AIM_ANGLE
     speed = C.POWER_MIN + (C.POWER_MAX - C.POWER_MIN) * state.power
@@ -39,6 +60,7 @@ def integrate_flight(state: GameState, events: np.ndarray) -> None:
         _end_flight(state, events, sunk_cup=-1)
         return
     bp, bv = state.ball_position, state.ball_velocity
+    z_before = float(bp[2])
     bv[2] -= C.GRAVITY * C.DT
     bp += bv * C.DT
 
@@ -47,21 +69,24 @@ def integrate_flight(state: GameState, events: np.ndarray) -> None:
         _end_flight(state, events, sunk_cup=-1)
         return
 
-    # descending near rim height -> clean make / rim clip / past
-    if bv[2] < 0 and bp[2] <= C.CUP_RIM_Z:
+    # cup interaction ONLY at the descending rim-plane crossing (where a cup
+    # catches the ball) -> make / rim clip / pass-over
+    if bv[2] < 0 and z_before > C.CUP_RIM_Z >= bp[2]:
         cups = C.cup_layout()
+        best_c, best_d = -1, 1e9
         for c in range(C.NUM_CUPS):
             if not state.cups_present[c]:
                 continue
-            dx = float(bp[0] - cups[c, 0])
-            dy = float(bp[1] - cups[c, 1])
-            d = float(np.hypot(dx, dy))
-            if d <= C.SINK_RADIUS:                # over the cup mouth -> make
-                _end_flight(state, events, sunk_cup=c)
-                return
-            if d <= C.CUP_R + C.BALL_R:          # caught the rim -> bounce out, stay live
-                _rim_bounce(state, events, float(cups[c, 0]), float(cups[c, 1]), dx, dy, d)
-                return
+            d = float(np.hypot(bp[0] - cups[c, 0], bp[1] - cups[c, 1]))
+            if d < best_d:
+                best_c, best_d = c, d
+        if best_c >= 0 and best_d <= C.SINK_RADIUS:          # through the mouth -> make
+            _end_flight(state, events, sunk_cup=best_c)
+            return
+        if best_c >= 0 and best_d <= C.CUP_R + C.BALL_R:     # grazed the rim -> bounce
+            dx = float(bp[0] - cups[best_c, 0]); dy = float(bp[1] - cups[best_c, 1])
+            _rim_bounce(state, events, float(cups[best_c, 0]), float(cups[best_c, 1]), dx, dy, best_d)
+            return
 
     # hit the table -> miss
     if bp[2] <= C.BALL_R:

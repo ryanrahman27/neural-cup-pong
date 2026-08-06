@@ -43,15 +43,30 @@ def dxdu(y):
     return (xr - xl) / C.TABLE_W
 
 
-def predicted_landing(aim_x, power):
+def predicted_landing(aim_x, power, max_steps=120):
+    """True landing (x, y at z=0) by batched ballistic integration — matches
+    physics.simulate_landing so the reticle hint is honest."""
     angle = aim_x * C.MAX_AIM_ANGLE
     speed = C.POWER_MIN + (C.POWER_MAX - C.POWER_MIN) * power
     hs = speed * float(np.cos(C.LAUNCH_ELEV))
+    vx = hs * torch.sin(angle)
+    vy = hs * torch.cos(angle)
     vz = speed * float(np.sin(C.LAUNCH_ELEV))
-    z0 = float(C.THROW_ORIGIN[2])
-    t = (vz + torch.sqrt(vz * vz + 2 * C.GRAVITY * z0)) / C.GRAVITY
-    lx = float(C.THROW_ORIGIN[0]) + hs * torch.sin(angle) * t
-    ly = float(C.THROW_ORIGIN[1]) + hs * torch.cos(angle) * t
+    x = torch.full_like(aim_x, float(C.THROW_ORIGIN[0]))
+    y = torch.full_like(aim_x, float(C.THROW_ORIGIN[1]))
+    z = torch.full_like(aim_x, float(C.THROW_ORIGIN[2]))
+    if not torch.is_tensor(vz):
+        vz = torch.full_like(aim_x, float(vz))
+    lx, ly = x.clone(), y.clone()
+    done = torch.zeros_like(aim_x, dtype=torch.bool)
+    for _ in range(max_steps):
+        zb = z
+        vz = vz - C.GRAVITY * C.DT
+        x = x + vx * C.DT; y = y + vy * C.DT; z = z + vz * C.DT
+        cross = (~done) & (vz < 0) & (zb > C.CUP_RIM_Z) & (z <= C.CUP_RIM_Z)  # rim plane
+        lx = torch.where(cross, x, lx); ly = torch.where(cross, y, ly)
+        done = done | cross | (z <= 0)
+    lx = torch.where(done, lx, x); ly = torch.where(done, ly, y)
     return lx.clamp(0, C.TABLE_W), ly.clamp(0, C.TABLE_D)
 
 

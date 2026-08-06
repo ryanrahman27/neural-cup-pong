@@ -146,15 +146,8 @@ class Renderer:
         pygame.draw.rect(surf, C.COLOR_RETICLE, (bx0, by0 + bh - fh, bw, fh))
 
     def _predicted_landing(self, state):
-        angle = state.aim_x * C.MAX_AIM_ANGLE
-        speed = C.POWER_MIN + (C.POWER_MAX - C.POWER_MIN) * state.power
-        hs = speed * float(np.cos(C.LAUNCH_ELEV))
-        vz = speed * float(np.sin(C.LAUNCH_ELEV))
-        z0 = float(C.THROW_ORIGIN[2])
-        t = (vz + float(np.sqrt(vz * vz + 2 * C.GRAVITY * z0))) / C.GRAVITY
-        lx = float(C.THROW_ORIGIN[0]) + hs * float(np.sin(angle)) * t
-        ly = float(C.THROW_ORIGIN[1]) + hs * float(np.cos(angle)) * t
-        return float(np.clip(lx, 0, C.TABLE_W)), float(np.clip(ly, 0, C.TABLE_D))
+        from . import physics
+        return physics.simulate_landing(state.aim_x, state.power)   # true landing
 
     def _draw_hud(self, surf, state) -> None:
         left = int(state.cups_present.sum())

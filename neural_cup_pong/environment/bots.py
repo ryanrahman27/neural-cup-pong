@@ -22,18 +22,30 @@ def _target_cup(state: GameState) -> np.ndarray:
     return cups[present[0]] if len(present) else cups[0]
 
 
+_LANDING_GRID = None
+
+
+def _grid():
+    """Cache a (aim, power) -> true rim-plane landing table (via physics)."""
+    global _LANDING_GRID
+    if _LANDING_GRID is None:
+        from . import physics
+        aims = np.linspace(-1.0, 1.0, 41)
+        pows = np.linspace(0.1, 1.0, 41)
+        land = np.array([[physics.simulate_landing(a, p) for p in pows] for a in aims])
+        _LANDING_GRID = (aims, pows, land)
+    return _LANDING_GRID
+
+
 def _desired_aim_power(target: np.ndarray, rng: np.random.Generator, skill: float):
-    dx = float(target[0] - C.THROW_ORIGIN[0])
-    dy = float(target[1] - C.THROW_ORIGIN[1])
-    aim_angle = float(np.arctan2(dx, dy))
-    aim_x = float(np.clip(aim_angle / C.MAX_AIM_ANGLE, -1.0, 1.0))
-    R = float(np.hypot(dx, dy))
-    speed = float(np.sqrt(R * C.GRAVITY / max(1e-3, np.sin(2 * C.LAUNCH_ELEV))))
-    power = float(np.clip((speed - C.POWER_MIN) / (C.POWER_MAX - C.POWER_MIN), 0.0, 1.0))
-    # aiming error for variety
-    err = (1.0 - skill)
-    aim_x = float(np.clip(aim_x + rng.uniform(-1, 1) * err * 0.5, -1.0, 1.0))
-    power = float(np.clip(power + rng.uniform(-1, 1) * err * 0.12, 0.0, 1.0))
+    # pick the (aim, power) whose actual landing is nearest the target cup,
+    # then jitter by (1-skill) so makes/misses both appear in the data.
+    aims, pows, land = _grid()
+    d = np.hypot(land[..., 0] - float(target[0]), land[..., 1] - float(target[1]))
+    i, j = np.unravel_index(int(d.argmin()), d.shape)
+    err = 1.0 - skill
+    aim_x = float(np.clip(aims[i] + rng.uniform(-1, 1) * err * 0.4, -1.0, 1.0))
+    power = float(np.clip(pows[j] + rng.uniform(-1, 1) * err * 0.1, 0.0, 1.0))
     return aim_x, power
 
 
