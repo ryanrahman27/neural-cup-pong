@@ -17,9 +17,22 @@ auxiliary-supervision targets that keep the pixels easy. Original art throughout
 > structured-dynamics GRU → engine-off learned sim → visual world model →
 > **fully-generated neural gameplay** (engine *and* renderer off, ~213 Hz on an
 > RTX 4060). Play it: `python -m neural_cup_pong.play.play_world_model` then press
-> **F1** (engine) / **F2** (neural state) / **F3** (fully generated).
+> **F1** (engine) / **F2** (pure neural state) / **F3** (fully generated: neural
+> control + exact ballistic flight + neural decoder — sinks 6/6 like the engine).
 
 ![real vs neural](assets/phase5_gt_vs_neural.png)
+
+## Preprint
+
+A paper-style technical report covering the full pipeline, the measured results,
+and the **flight-precision wall** (a small structured model can't localize a
+ballistic landing to within a cup radius — 8.4u error vs the engine's 0.31u) and
+the **hybrid** fix that restores engine-parity sinking (6/6) while keeping control
+and rendering neural.
+
+- LaTeX source: [`paper/neural_cup_pong.tex`](paper/neural_cup_pong.tex)
+  (`pdflatex neural_cup_pong.tex`, run twice for the ToC/refs — or drop it in Overleaf)
+- Web version (figures embedded): https://claude.ai/code/artifact/b3a7db97-134d-4b55-97e5-e711bfb41d0b
 
 ## Quick start
 
@@ -55,7 +68,8 @@ obs, state, reward, terminated, truncated, info = env.step(A.make_action(throw=T
 3. **Structured-dynamics baseline** ✅ (~233K GRU; controllable + legal)
 4. **Renderer-based learned playable simulator** ✅ (engine off, F2)
 5. **Visual world model** ✅ (state-grounded neural decoder, ~262K; near-pixel-perfect)
-6. **Fully generated neural gameplay** ✅ (engine **and** renderer off, F3, ~213 Hz)
+6. **Fully generated neural gameplay** ✅ (engine **and** renderer off, F3, ~213 Hz;
+   hybrid flight — neural control + exact ballistics — sinks 6/6 like the engine)
 
 ## License
 
