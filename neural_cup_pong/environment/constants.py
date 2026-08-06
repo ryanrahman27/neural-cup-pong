@@ -31,9 +31,12 @@ POWER_RATE: float = 0.9             # power/s while held (power in [0,1])
 
 # --- Ball / cups -------------------------------------------------------------
 BALL_R: float = 1.6
-CUP_R: float = 4.0                  # mouth radius
+CUP_R: float = 4.0                  # mouth radius (drawn size)
 CUP_H: float = 9.0                  # cup height
 CUP_RIM_Z: float = 8.0              # sink/rim-contact test height
+SINK_RADIUS: float = 3.3            # ball-center distance that counts as a make
+                                    # (forgiving: "visibly over the cup" -> drops;
+                                    #  a graze between here and CUP_R+BALL_R rims out)
 RESTITUTION: float = 0.45           # table bounce on a miss
 
 # Rim bounce: ball catches the rim ring (not clean through the hole) -> deflect.

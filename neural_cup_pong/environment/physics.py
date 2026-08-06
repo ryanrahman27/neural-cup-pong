@@ -56,7 +56,7 @@ def integrate_flight(state: GameState, events: np.ndarray) -> None:
             dx = float(bp[0] - cups[c, 0])
             dy = float(bp[1] - cups[c, 1])
             d = float(np.hypot(dx, dy))
-            if d <= C.CUP_R - C.BALL_R:          # fits through the hole -> make
+            if d <= C.SINK_RADIUS:                # over the cup mouth -> make
                 _end_flight(state, events, sunk_cup=c)
                 return
             if d <= C.CUP_R + C.BALL_R:          # caught the rim -> bounce out, stay live
