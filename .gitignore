@@ -12,4 +12,7 @@ runs/
 checkpoints/
 *.mp4
 *.gif
+# committed demo clips (exceptions to the media ignore above)
+!media/engine_vs_worldmodel.mp4
+!media/engine_vs_worldmodel.gif
 wandb/
