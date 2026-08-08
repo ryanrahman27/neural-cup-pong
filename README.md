@@ -30,6 +30,7 @@ ballistic landing to within a cup radius — 8.4u error vs the engine's 0.31u) a
 the **hybrid** fix that restores engine-parity sinking (6/6) while keeping control
 and rendering neural.
 
+- Rendered PDF: [`paper/neural_cup_pong.pdf`](paper/neural_cup_pong.pdf)
 - LaTeX source: [`paper/neural_cup_pong.tex`](paper/neural_cup_pong.tex)
   (`pdflatex neural_cup_pong.tex`, run twice for the ToC/refs — or drop it in Overleaf)
 - Web version (figures embedded): https://claude.ai/code/artifact/b3a7db97-134d-4b55-97e5-e711bfb41d0b
